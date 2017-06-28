@@ -6,7 +6,7 @@
 /**
  * Main AngularJS Web Application
  */
-var app = angular.module('myApp', [ 'ui.router', 'ui.calendar']);
+var app = angular.module('myApp', [ 'ui.router']);
 
 /**
  * Configure the Routes

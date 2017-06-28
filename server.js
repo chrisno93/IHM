@@ -10,9 +10,10 @@ app.listen(4000,function(){
     console.log('Node server running @ http://localhost:4000')
 });
 // app.use(parser.urlencoded({extended : true}));
-app.use(morgan('dev'));
+app.use(morgan('dev')); //Log server
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 opn('http://localhost:4000', {app: 'chrome'});
 
 var config = {
@@ -22,7 +23,7 @@ var config = {
     // password:'P@ssw0rd',
     // server: 'localhost\\SQLEXPRESS', // You can use 'localhost\\instance' to connect to named instance
     server: '10.18.10.3\\MSSQLSERVER',
-    database: 'PrgHoraires',
+    database: 'DONNEES',
 
     options: {
         encrypt: true // Use this if you're on Windows Azure
@@ -38,9 +39,12 @@ console.log('MS SQL connected success');
 
 function query(query, req, res, read) { //read = true only for SELECT query
   var request =  new sql.Request()
-  .query(query).then(function(recordset) {
-  if(read) { var ids = JSON.parse(JSON.stringify(recordset).replace(/"\s+|\s+"/g,'"'))
-  res.json(ids) }
+  .query(query).then(function(rec) {
+  if(read) { var ids = JSON.parse(JSON.stringify(rec.recordset).replace(/"\s+|\s+"/g,'"'))
+  res.json(ids)
+// console.log(ids)
+
+}
   else res.send()
   }).catch(function(err) {
   console.log(err.name + ' --> ' + err.code + ' : ' + err.message);
@@ -50,25 +54,25 @@ function query(query, req, res, read) { //read = true only for SELECT query
     // return p1 * p2;              // The function returns the product of p1 and p2
 }
 
-app.get('/api/event', function(req, res) {
-query('Select id,CT,DGF,Debut as "start", Fin as "end", Evenement as "title" from dbo.Evenements',req,res, true)
-});
+// app.get('/api/event', function(req, res) {
+// query('Select id,CT,DGF,Debut as "start", Fin as "end", Evenement as "title" from dbo.Evenements',req,res, true)
+// });
 
-app.post('/api/event', function(req, res) {
+app.post('/api/CT', function(req, res) {
 var b = req.body;
 console.log(b)
-var update= "UPDATE dbo.Evenements SET Debut=\'" +b.Debut+ "\',Fin=\'" +b.Fin+ "\',Evenement=\'" +b.Title+ "\' where id=\'" +b.Id+ "\'"
-query(update,req,res,false)
+var select= "SELECT * From SUPERVISION Where localisation=\'" + b.CT + "\'"
+query(select,req,res,true)
 });
 
-app.post('/api/delete', function(req, res) {
-var b = req.body;
-console.log(b)<z
-var update= "DELETE From dbo.Evenements Where id=\'" +b.Id+ "\'"
-query(update,req,res,false)
-   });
+// app.post('/api/delete', function(req, res) {
+// var b = req.body;
+// console.log(b)<z
+// var update= "DELETE From dbo.Evenements Where id=\'" +b.Id+ "\'"
+// query(update,req,res,false)
+//    });
 
-app.use('/',  express.static(__dirname + '/'));
+app.use('/',  express.static(__dirname + '/')); //Fichier a servir
 
 // app.get('*',function(req,res){
 //     res.sendFile('index.html',{'root': __dirname });

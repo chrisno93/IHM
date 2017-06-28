@@ -1,14 +1,6 @@
-CT 18547 - Nom du circuit
-<div class = "row bandeau">
+<p>{{ exp }}</p>
+<input ng-model="exp"></input>
 
-  <button class = "btn btn1" type = "button" >Label</button>
-
-    <button class = "btn btn1" type = "button" >Label</button>
-
-<div class = "col right">
-    <button class = "btn btn1 " type = "button" >Label</button>
-    <!-- <button class = "btn btn1 " type = "button" >Label</button> -->
+<div ng-repeat="item in tab">
+{{item.ACQ_Adresse}}  -- {{item.ACQ_Equipement}}
 </div>
-</div>
-
-<div ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar">
