@@ -46,22 +46,25 @@
   display: flex;
   flex-wrap: nowrap;
 	flex-direction: column;
-  /*justify-content: space-between;*/
+  justify-content: space-between;
   align-items: stretch;
 }
+
 .row
 {
-  /*width : auto;*/
+  width : auto;
 	display: flex;
   flex-wrap: nowrap;
 	flex-direction: row;
-  /*justify-content: space-between;*/
+  justify-content: space-between;
   align-items: stretch;
 }
+
 .disabled
 {
 
 }
+
 .left
 {
 justify-content: flex-start;
@@ -73,4 +76,69 @@ justify-content: flex-end;
 .center
 {
 justify-content: center;
+}
+
+html,body {
+	height:100%;
+}
+
+.row-flex, .row-flex > div[class*='col-'] {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:1 1 auto;
+}
+
+.row-flex-wrap {
+	-webkit-flex-flow: row wrap;
+    align-content: flex-start;
+    flex:0;
+}
+
+.row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
+	 margin:-.2px; // hack adjust for wrapping
+}
+
+.container-flex > div[class*='col-'] div,.row-flex > div[class*='col-'] div {
+	width:100%;
+}
+
+.flex-col {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1 100%;
+	  flex-flow: column nowrap;
+}
+
+.flex-grow {
+	display: flex;
+    -webkit-flex: 2;
+    flex: 2;
+}
+
+.textarea {
+  heigth: auto;
+  width: auto;
+  border:   ;
+  font-family: "Roboto" ;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.panel-heading {
+  background-color: #F7F7F7 ;
+  font-size: 20px;
+  font-weight: bold;
+  color: #315286;
+}
+
+.panel-body {
+  background-color: #E9EDF2;
+  color: #282828;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
 }

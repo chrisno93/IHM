@@ -1,6 +1,213 @@
-<p>{{ exp }}</p>
-<input ng-model="exp"></input>
-<button class= "btn" >BTN</button>
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" >
+<head>
+    <!-- Meta-Information -->
+    <title>IHM</title>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=8,chrome=1"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=9" /> <!-- Compatibilité avec IE à partir de la version IE9 -->
+    <meta name="description" content="Eiffage">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" style="text/css" href="main.css" />
+
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+<!-- <script src="node_modules/angular1/es6/dev/src/testing/shims_for_IE.js"></script> -->
+<!--<input ng-model="exp"></input>
+ <button class= "btn" >BTN</button>
+ <div ng-repeat="item in tab">
+ {{item.ACQ_Adresse}} {{item.ACQ_Equipement}}
+ </div>
+-->
+<!-- <div ng-repeat="item in tab">
+        {{item.ACQ_Adresse}}
+     </div> -->
+
+<!--<div class="gridStyle" ng-grid="gridOptions"></div>
+-->
+<!-- <div class="panel-heading"><strong> {{ NumCT }} </strong></div> -->
+
+<div class="container">
+   <div class= "row row-flex row flex-wrap">
+    <div class="col-md-4">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading"><strong>Description générale</strong></div>
+          <div class="panel-body flex-grow">
+            Numéro du CT : {{ ct }} <!-- Récupération de l'adresse du CT sélectionné -->
+            </br>
+            Désignation CT : {{ desc }}
+            </br>
+            Numéro du poste technique : {{ pt }}
+            </br>
+            Adresse : {{ adr }} {{ cp }} {{ ville }}
+            </br>
+            Puissance totale installée (kW) : {{ puiss }}
+            </br>
+            Contrat d'objectif : {{ ctr }}
+            </br>
+            Type Energie principale : {{ nrg }}
+            </br>
+            Etat administratif : {{ stat }}
+            </br>
+            Type CT : {{ typ }}
+            </br>
+            Centre thermique supervisé : {{ super }}
+            </br>
+            Date prévisionnelle de rénovation : {{ prev }}
+            </br>
+            Remarque technique sur la prochaine rénovation : {{ rmq }}
+            </br>
+            Date de la dernière rénovation / Date d'ouverture : {{ dat }}
+            </br>
+            Description de la derniére rénovation : {{ der }}
+
+          </div>
+      </div>
+    </div> <!-- col -->
+  </div><!--/row-->
+</div><!--/container-->
+
+<div class="container">
+  <div class= "row row-flex row-flex-wrap">
+    <div class="col-md-4">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading"><strong>Nombre de Groupes Fonctionnels</strong></div>
+          <div class="panel-body flex-grow">
+            Nombre de productions et/ou sous-station chaud :  {{  }} <!-- Récupération table -->
+            </br>
+            Nombre de productions et/ou sous-station froid :  {{  }} <!-- Récupération table-->
+            </br>
+            Nombre de réseaux secondaires : {{  }} <!-- Récupération table -->
+            </br>
+            Nombre de CTA : {{  }} <!-- Récupération table -->
+            </br>
+            Nombre de production ECS : {{  }} <!-- Récupération table -->
+            </br>
+          </div>
+      </div>
+    </div>
+  </div><!--/row-->
+</div><!--/container-->
+
+<div class="container">
+  <div class= "row row-flex row-flex-wrap">
+    <div class="col-md-4">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading"><strong>Les "Prestations" P1 P2 P3 P4</strong></div>
+          <div class="panel-body flex-grow">
+            P4 travaux du propriétaire : {{ p4 }}
+            </br>
+            P3 gros entretien et renouvellement du matériel : {{ p3 }}
+            </br>
+            P2 conduite de l'installation et travaux de petit entretien : {{ p2 }}
+            </br>
+            P1 fourniture énergie primaire : {{ p1 }}
+            </br>
+          </div>
+      </div>
+    </div>
+  </div><!--/row-->
+</div><!--/container-->
+
+<div class="container">
+  <div class= "row row-flex row-flex-wrap">
+    <div class="col-md-4">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading"><strong>Commentaires</strong></div>
+          <div class="panel-body flex-grow">
+            <!-- Commentaires / définir la taille de la box de commentaires -->
+            <input type="text" name="input" ng-model="string" ng-maxlength= "300">
+    </div>
+      </div>
+        </div>
+  </div><!--/row-->
+</div><!--/container-->
+
+<!-- Boutons 'Enregistrer' et 'Annuler'
+<input type="submit" id="submit" value="Enregistrer" />
+<input type="submit" id="submit" value="Annuler" /> -->
+<!-- Placer un bouton de validaation ou d'annulation en dessous ou pop-up à la fin de la saisie et des modification sur la page-->
+
+<div class="container">
+  <div class= "row row-flex row-flex-wrap">
+    <div class="col-md-4">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading"><strong>Les exploitants du Centre Thermique</strong></div> <!-- Tableaux multicolonnes  ??? -->
+          <div class="panel-body flex-grow">
+          Exploitant principal : {{ }}
+            </br>
+          Suivi exploitation :
+            </br>
+          Prise en charge travaux du propriétaire : {{ }}
+            </br>
+          Exploitant secondaire support : {{ }}
+            </br>
+          </div>
+      </div>
+    </div>
+  </div><!--/row-->
+</div><!--/container-->
+
+<div class="container">
+  <div class= "row row-flex row-flex-wrap">
+    <div class="col-md-4">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading"><strong>Equipements du centre thermique</strong></div>
+          <div class="panel-body flex-grow">
+
+            </br>
+          </div>
+      </div>
+    </div>
+  </div><!--/row-->
+</div><!--/container-->
+
+<div class="container">
+  <div class= "row row-flex row-flex-wrap">
+    <div class="col-md-4">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading"><strong>Les objets fonctionnels du Centre Thermique</strong></div> <!-- Tableaux mutlicolonnes ? -->
+          <div class="panel-body flex-grow">
+            <!-- Liste déroulante et tableau -->
+            </br>
+            <!-- Liste déroulante et tableau -->
+          </div>
+      </div>
+    </div>
+  </div><!--/row-->
+</div><!--/container-->
+
+<div class="container">
+  <div class= "row row-flex row-flex-wrap">
+    <div class="col-md-4">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading"><strong>Les automates du Centre Thermique</strong></div> <!-- Tableaux multicolonnes ? -->
+          <div class="panel-body flex-grow">
+            </br>
+          </div>
+      </div>
+    </div>
+  </div><!--/row-->
+</div><!--/container-->
+
+<!-- Tableau
 <div ng-repeat="item in tab">
-{{item.ACQ_Adresse}}  -- {{item.ACQ_Equipement}}
-</div> 
+  <table>
+    <tr ng-repeat="item in $data">
+      <td>{{ x.Localisation }}</td>
+      <td>{{ x.Libelle_information }}</td>
+    </tr>
+  </table>
+</div> -->
+
+<!-- Commentaires / définir la taille de la box de commentaires
+<div ng-controller="controller.js">
+  <form name = "Commentaires">
+<form>Commentaires : <textarea class="form-control" id="comment"></textarea></form>
+<input type="text" name="input" ng-model="string" ng-maxlength= "3000">
+-->
+</body>
+</html>

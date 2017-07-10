@@ -17,13 +17,14 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 opn('http://localhost:4000', {app: 'chrome'});
 
 var config = {
-    user: 'BdConnectClient',
-    password: 'Uuxwp7Mcxo7Khy',
+    user: 'sa',
+    password: 'VdP2016!',
     // user : 'root',
     // password:'P@ssw0rd',
     // server: 'localhost\\SQLEXPRESS', // You can use 'localhost\\instance' to connect to named instance
     server: '10.18.10.3\\MSSQLSERVER',
-    database: 'DONNEES',
+    database: 'BDD_DONNEES',
+    //  database: 'BDD_DONNEES',
 
     options: {
         encrypt: true // Use this if you're on Windows Azure
@@ -51,7 +52,7 @@ function query(query, req, res, read) { //read = true only for SELECT query
   res.send(err)
   });
 
-    // return p1 * p2;              // The function returns the product of p1 and p2
+    // return p1 * p2;  // The function returns the product of p1 and p2
 }
 
 // app.get('/api/event', function(req, res) {
@@ -61,9 +62,22 @@ function query(query, req, res, read) { //read = true only for SELECT query
 app.post('/api/CT', function(req, res) {
 var b = req.body;
 console.log(b)
-var select= "SELECT * From SUPERVISION Where localisation=\'" + b.CT + "\'"
+//var select= "SELECT * From CENTRE_THERMIQUE Where CTH_NUM_CT =\'" + b.CT + "\'"
+// Appel de la procédure stockée à faire ici //
+var select = "SELECT * From CENTRE_THERMIQUE left join CENTRE_THERMIQUE_TYPE on CTH_CTT_ID = CTT_ID left join STATUT on CTH_STA_ID = STA_ID left join ENERGIE on CTH_NRG_ID = NRG_ID Where CTH_NUM_CT =\'" + b.CT + "\'"
 query(select,req,res,true)
 });
+
+// app.post('/api/LISTE', function(req,res)) {
+// var c = req.body;
+// console.log(c)
+// var select= "SELECT * From CENTRE_THERMIQUE Where CTH_NUM_PT =\'" + c.LISTE + "\'"
+// query(select,req,res,true)
+// });
+
+// Appel de procédure stockée dans angular
+// CallableStatement cs = conn.prepareCall("{call SHOW_FOURNISSEURS}");
+// ResultSet rs = cs.executeQuery();
 
 // app.post('/api/delete', function(req, res) {
 // var b = req.body;
@@ -83,10 +97,6 @@ app.use(function(req, res, next){
   // default to plain-text. send()
    res.type('txt').send('Not found');
  });
-
-
-
-
 
 //     var request =  new sql.Request()
 //
@@ -111,8 +121,6 @@ app.use(function(req, res, next){
 //         console.log(err.name + ' --> ' + err.code + ' : ' + err.message);
 //
 //     });
-
-
 
       // use mongoose to get all todos in the database
       // Todo.find(function(err, todos) {
