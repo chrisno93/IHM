@@ -56,28 +56,28 @@ function query(query, req, res, read) { //read = true only for SELECT query
 }
 
 // Appel d'une procédure stockée pour ramener les valeurs
-// const request = new sql.Request()
-// request.input('input_parameter', sql.Int, value)
-// request.output('output_parameter', sql.Int)
-// request.execute('SELECT_CENTRE_THERMIQUE', (err, result) => {
+//const request = new sql.Request()
+//request.input('input_parameter', sql.Int, value)
+//request.output('output_parameter', sql.Int)
+//request.execute('SELECT_CENTRE_THERMIQUE', (err, result) => {
 // ... error checks
-// console.log(result.recordsets.length) // count of recordsets returned by the procedure 
-// console.log(result.recordsets[0].length) // count of rows contained in first recordset
-// console.log(result.recordset) // first recordset from result.recordsets
-// console.log(result.returnValue) // procedure return value
-// console.log(result.output) // key/value collection of output values
-// console.log(result.rowsAffected) // array of numbers, each number represents the number of rows affected by executed statemens
-// })
+//console.log(result.recordsets.length) // count of recordsets returned by the procedure
+//console.log(result.recordsets[0].length) // count of rows contained in first recordset
+//console.log(result.recordset) // first recordset from result.recordsets
+//console.log(result.returnValue) // procedure return value
+//console.log(result.output) // key/value collection of output values
+//console.log(result.rowsAffected) // array of numbers, each number represents the number of rows affected by executed statemens
+//})
 
 // app.get('/api/event', function(req, res) {
 // query('Select id,CT,DGF,Debut as "start", Fin as "end", Evenement as "title" from dbo.Evenements',req,res, true)
 // });
 
+// Requête en dur !
 app.post('/api/CT', function(req, res) {
 var b = req.body;
 console.log(b)
 //var select= "SELECT * From CENTRE_THERMIQUE Where CTH_NUM_CT =\'" + b.CT + "\'"
-// Appel de la procédure stockée à faire ici //
 var select = "SELECT * From CENTRE_THERMIQUE left join CENTRE_THERMIQUE_TYPE on CTH_CTT_ID = CTT_ID left join STATUT on CTH_STA_ID = STA_ID left join ENERGIE on CTH_NRG_ID = NRG_ID Where CTH_NUM_CT =\'" + b.CT + "\'"
 query(select,req,res,true)
 });
