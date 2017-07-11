@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+html, body{
+    height:100%;
+}
+=======
+>>>>>>> origin/master
 .btn {
   height : 40px ;
   width: 50px;
@@ -47,6 +53,7 @@
 	flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+
 }
 
 .row
@@ -128,16 +135,21 @@ html,body {
 }
 
 .panel-heading {
-  background-color: #F7F7F7 ;
-  font-size: 20px;
-  font-weight: bold;
-  color: #315286;
+  background-color: #F7F7F7 !important;
+  font-size: 12px;
+  font-weight: bold !important;
+  font-family: "Roboto"!important;
+  color: #315286 !important;
 }
 
 .panel-body {
+  font-family: "Roboto" !important;
   background-color: #E9EDF2;
-  color: #282828;
+  color: #282828 !important;
   font-weight: normal;
   font-style: normal;
-  font-size: 18px;
+  font-size: 14px;
+  flex-shrink : 0 ;
+  flex-basis : auto ;
+  flex-wrap: nowrap;
 }

@@ -1,17 +1,11 @@
 <!DOCTYPE html>
-<!-- <html xmlns:ng="http://angularjs.org" > -->
 <head>
     <!-- Meta-Information -->
     <!-- Use Internet Explorer 9 Standards mode -->
   <!--  <meta http-equiv="X-UA-Compatible" content="IE=Edge" -->
     <meta http-equiv="X-UA-Compatible" content="IE=IE9"/>
     <meta charset="utf-8">
-
     <title>IHM</title>
-    <!--<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1"> -->
-    <!--[if IE]>
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
-    <![endif]-->
     <meta name="description" content="Eiffage">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -37,50 +31,49 @@
 <!-- <div class="panel-heading"><strong> {{ NumCT }} </strong></div> -->
 
 <div class="container">
-   <div class= "row row-flex row flex-wrap">
-    <div class="col-md-4">
+
+   <div class= "row row-flex">
+
+    <div class="col-lg-4">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading"><strong>Description générale</strong></div>
-          <div class="panel-body flex-grow">
+        <div class="panel-heading">Description générale</div>
+          <div class="panel-body ">
             Numéro du CT : {{ ct }} <!-- Récupération de l'adresse du CT sélectionné -->
             </br>
             Désignation CT : {{ desc }}
             </br>
             Numéro du poste technique : {{ pt }}
             </br>
-            Adresse : {{ adr }} {{ cp }} {{ ville }}
+            Adresse : {{ adr }} {{ cp }} {{  ville }}
             </br>
-            Puissance totale installée (kW) : {{ puiss }}
+            Puissance totale installée (kW) : {{  puiss }}
             </br>
-            Contrat d'objectif : {{ ctr }}
+            Contrat d'objectif : {{  ctr }}
             </br>
-            Type Energie principale : {{ nrg }}
+            Type Energie principale : {{  nrg }}
             </br>
-            Etat administratif : {{ stat }}
+            Etat administratif : {{  stat }}
             </br>
-            Type CT : {{ typ }}
+            Type CT : {{  typ }}
             </br>
-            Centre thermique supervisé : {{ super }}
+            Centre thermique supervisé : {{  super }}
             </br>
-            Date prévisionnelle de rénovation : {{ prev }}
+            Date prévisionnelle de rénovation : {{  prev }}
             </br>
-            Remarque technique sur la prochaine rénovation : {{ rmq }}
+            Remarque technique sur la prochaine rénovation : {{  rmq }}
             </br>
-            Date de la dernière rénovation / Date d'ouverture : {{ dat }}
+            Date de la dernière rénovation / Date d'ouverture : {{  dat }}
             </br>
-            Description de la derniére rénovation : {{ der }}
+            Description de la derniére rénovation : {{  der }}
 
           </div>
       </div>
     </div> <!-- col -->
-  </div><!--/row-->
-</div><!--/container-->
 
-<div class="container">
-  <div class= "row row-flex row-flex-wrap">
-    <div class="col-md-4">
+
+    <div class="col-lg-4">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading"><strong>Nombre de Groupes Fonctionnels</strong></div>
+        <div class="panel-heading">Nombre de Groupes Fonctionnels</div>
           <div class="panel-body flex-grow">
             Nombre de productions et/ou sous-station chaud :  {{  }} <!-- Récupération table -->
             </br>
@@ -95,53 +88,46 @@
           </div>
       </div>
     </div>
-  </div><!--/row-->
-</div><!--/container-->
 
-<div class="container">
-  <div class= "row row-flex row-flex-wrap">
-    <div class="col-md-4">
+
+    <div class="col-lg-4">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading"><strong>Les "Prestations" P1 P2 P3 P4</strong></div>
+        <div class="panel-heading">Les "Prestations" P1 P2 P3 P4</div>
           <div class="panel-body flex-grow">
-            P4 travaux du propriétaire : {{ p4 }}
+            P4 travaux du propriétaire : {{  p4 }}
             </br>
-            P3 gros entretien et renouvellement du matériel : {{ p3 }}
+            P3 gros entretien et renouvellement du matériel : {{  p3 }}
             </br>
-            P2 conduite de l'installation et travaux de petit entretien : {{ p2 }}
+            P2 conduite de l'installation et travaux de petit entretien : {{  p2 }}
             </br>
-            P1 fourniture énergie primaire : {{ p1 }}
+            P1 fourniture énergie primaire : {{  p1 }}
             </br>
           </div>
       </div>
     </div>
-  </div><!--/row-->
-</div><!--/container-->
+  </div>
 
-<div class="container">
-  <div class= "row row-flex row-flex-wrap">
-    <div class="col-md-4">
+  <div class= "row row-flex"> <!-- Row 2 -->
+
+    <div class="col-lg-3">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading"><strong>Commentaires</strong></div>
+        <div class="panel-heading">Commentaires</div>
           <div class="panel-body flex-grow">
             <!-- Commentaires / définir la taille de la box de commentaires -->
             <input type="text" name="input" ng-model="string" ng-maxlength= "300">
-    </div>
+       </div>
       </div>
-        </div>
-  </div><!--/row-->
-</div><!--/container-->
+    </div>
+
 
 <!-- Boutons 'Enregistrer' et 'Annuler'
 <input type="submit" id="submit" value="Enregistrer" />
 <input type="submit" id="submit" value="Annuler" /> -->
 <!-- Placer un bouton de validaation ou d'annulation en dessous ou pop-up à la fin de la saisie et des modification sur la page-->
 
-<div class="container">
-  <div class= "row row-flex row-flex-wrap">
-    <div class="col-md-4">
+    <div class="col-lg-3">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading"><strong>Les exploitants du Centre Thermique</strong></div> <!-- Tableaux multicolonnes  ??? -->
+        <div class="panel-heading">Les exploitants du Centre Thermique</div> <!-- Tableaux multicolonnes  ??? -->
           <div class="panel-body flex-grow">
           Exploitant principal : {{ }}
             </br>
@@ -154,28 +140,21 @@
           </div>
       </div>
     </div>
-  </div><!--/row-->
-</div><!--/container-->
 
-<div class="container">
-  <div class= "row row-flex row-flex-wrap">
-    <div class="col-md-4">
+
+    <div class="col-lg-3">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading"><strong>Equipements du centre thermique</strong></div>
+        <div class="panel-heading">Equipements du centre thermique</div>
           <div class="panel-body flex-grow">
 
             </br>
           </div>
       </div>
     </div>
-  </div><!--/row-->
-</div><!--/container-->
 
-<div class="container">
-  <div class= "row row-flex row-flex-wrap">
-    <div class="col-md-4">
+    <div class="col-lg-3">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading"><strong>Les objets fonctionnels du Centre Thermique</strong></div> <!-- Tableaux mutlicolonnes ? -->
+        <div class="panel-heading">Les objets fonctionnels du Centre Thermique</div> <!-- Tableaux mutlicolonnes ? -->
           <div class="panel-body flex-grow">
             <!-- Liste déroulante et tableau -->
             </br>
@@ -183,14 +162,10 @@
           </div>
       </div>
     </div>
-  </div><!--/row-->
-</div><!--/container-->
 
-<div class="container">
-  <div class= "row row-flex row-flex-wrap">
-    <div class="col-md-4">
+    <div class="col-lg-3">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading"><strong>Les automates du Centre Thermique</strong></div> <!-- Tableaux multicolonnes ? -->
+        <div class="panel-heading">Les automates du Centre Thermique</div> <!-- Tableaux multicolonnes ? -->
           <div class="panel-body flex-grow">
             </br>
           </div>
@@ -198,7 +173,6 @@
     </div>
   </div><!--/row-->
 </div><!--/container-->
-
 <!-- Tableau
 <div ng-repeat="item in tab">
   <table>
