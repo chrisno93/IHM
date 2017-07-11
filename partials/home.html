@@ -14,25 +14,12 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 <script src="node_modules/angular1/es6/dev/src/testing/shims_for_IE.js"></script>
-<!--<input ng-model="exp"></input>
- <button class= "btn" >BTN</button>
- <div ng-repeat="item in tab">
- {{item.ACQ_Adresse}} {{item.ACQ_Equipement}}
- </div>
--->
-<!-- <div ng-repeat="item in tab">
-        {{item.ACQ_Adresse}}
-     </div> -->
 
-<!--<div class="gridStyle" ng-grid="gridOptions"></div>
--->
-<!-- <div class="panel-heading"><strong> {{ NumCT }} </strong></div> -->
-
+<!-- Container Flex -->
 <div class="container">
 
-   <div class= "row row-flex">
-
-    <div class="col-lg-6">
+<div class= "row-flex">
+    <div class="col-lg-4">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Description générale</div>
           <div class="panel-body ">
@@ -63,12 +50,11 @@
             Date de la dernière rénovation / Date d'ouverture : {{  dat }}
             </br>
             Description de la derniére rénovation : {{  der }}
-
           </div>
       </div>
     </div>
 
-    <div class="col-lg-3">
+    <div class="col-lg-4">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Nombre de Groupes Fonctionnels</div>
           <div class="panel-body flex-grow">
@@ -86,7 +72,7 @@
       </div>
     </div>
 
-    <div class="col-lg-3">
+    <div class="col-lg-4">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les "Prestations" P1 P2 P3 P4</div>
           <div class="panel-body flex-grow">
@@ -101,21 +87,21 @@
           </div>
       </div>
     </div>
-  </div>
+</div> <!-- Fin Row Flex -->
 
-<!--  <div class= "row row-flex"> -->
+<div class= "row-flex">
     <div class="col-lg-12">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Commentaires</div>
           <div class="panel-body flex-grow">
             <!--Textarea Elastic / Récupérer le commentaire et l'insérer dans une table ? -->
-            <textarea class = "form-control" maxlength = "250"></textarea>
-            <!-- Bouton Envoi/ Insertion Commentaires -->
-            <button ng-click = "">Valider</button>
+            <textarea class = "form-control" maxlength = "250">La chaufferie est fonctionnelle</textarea>
           </div>
       </div>
     </div>
+</div>
 
+<div class= "row-flex">
     <div class="col-lg-12">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les exploitants du Centre Thermique</div> <!-- Tableaux multicolonnes  ??? -->
@@ -131,8 +117,9 @@
           </div>
       </div>
     </div>
+</div>
 
-
+<div class= "row-flex">
     <div class="col-lg-12">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Equipements du centre thermique</div>
@@ -141,7 +128,9 @@
           </div>
       </div>
     </div>
+</div>
 
+<div class= "row-flex">
     <div class="col-lg-12">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les objets fonctionnels du Centre Thermique</div> <!-- Tableaux mutlicolonnes ? -->
@@ -152,7 +141,9 @@
           </div>
       </div>
     </div>
+</div>
 
+<div class= "row-flex">
     <div class="col-lg-12">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les automates du Centre Thermique</div> <!-- Tableaux multicolonnes ? -->
@@ -162,22 +153,7 @@
       </div>
     </div>
   </div>
-<!-- </div> -->
-<!-- Tableau
-<div ng-repeat="item in tab">
-  <table>
-    <tr ng-repeat="item in $data">
-      <td>{{ x.Localisation }}</td>
-      <td>{{ x.Libelle_information }}</td>
-    </tr>
-  </table>
-</div> -->
+</div> <!-- Fin container -->
 
-<!-- Commentaires / définir la taille de la box de commentaires
-<div ng-controller="controller.js">
-  <form name = "Commentaires">
-<form>Commentaires : <textarea class="form-control" id="comment"></textarea></form>
-<input type="text" name="input" ng-model="string" ng-maxlength= "3000">
--->
 </body>
 </html>
