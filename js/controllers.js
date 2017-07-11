@@ -20,6 +20,7 @@ app.controller('AppCtrl', function ( $scope, $http) {
   $scope.rmq =""
   $scope.dat =""
   $scope.der =""
+  $scope.date =""
 
   function get_CT()
   {
@@ -87,5 +88,5 @@ function Ctrl($scope)
 {
   $scope.date = new Date();
 }
-  
+
 });
