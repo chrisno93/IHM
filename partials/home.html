@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <head>
     <!-- Meta-Information -->
-    <!-- Use Internet Explorer 9 Standards mode -->
-  <!--  <meta http-equiv="X-UA-Compatible" content="IE=Edge" -->
-    <meta http-equiv="X-UA-Compatible" content="IE=IE9"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta charset="utf-8">
     <title>IHM</title>
     <meta name="description" content="Eiffage">
@@ -34,7 +32,7 @@
 
    <div class= "row row-flex">
 
-    <div class="col-lg-12">
+    <div class="col-lg-6">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Description générale</div>
           <div class="panel-body ">
@@ -68,10 +66,10 @@
 
           </div>
       </div>
-    </div> <!-- col -->
+    </div>
 
 
-    <div class="col-lg-9">
+    <div class="col-lg-3">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Nombre de Groupes Fonctionnels</div>
           <div class="panel-body flex-grow">
@@ -90,7 +88,7 @@
     </div>
 
 
-    <div class="col-lg-9">
+    <div class="col-lg-3">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les "Prestations" P1 P2 P3 P4</div>
           <div class="panel-body flex-grow">
@@ -107,24 +105,18 @@
     </div>
   </div>
 
-  <div class= "row row-flex"> <!-- Row 2 -->
-
-    <div class="col-lg-3">
+<!--  <div class= "row row-flex"> -->
+    <div class="col-lg-12">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Commentaires</div>
           <div class="panel-body flex-grow">
-            <!-- Commentaires / définir la taille de la box de commentaires -->
-            <input type="text" name="input" ng-model="string" ng-maxlength= "300">
-       </div>
+            <!--Textarea Elastic / Récupérer le commentaire et l'insérer dans une table ? -->
+            <textarea  maxlength = "400"></textarea>
+          </div>
       </div>
     </div>
 
-<!-- Boutons 'Enregistrer' et 'Annuler'
-<input type="submit" id="submit" value="Enregistrer" />
-<input type="submit" id="submit" value="Annuler" /> -->
-<!-- Placer un bouton de validaation ou d'annulation en dessous ou pop-up à la fin de la saisie et des modification sur la page-->
-
-    <div class="col-lg-3">
+    <div class="col-lg-12">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les exploitants du Centre Thermique</div> <!-- Tableaux multicolonnes  ??? -->
           <div class="panel-body flex-grow">
@@ -141,17 +133,16 @@
     </div>
 
 
-    <div class="col-lg-3">
+    <div class="col-lg-12">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Equipements du centre thermique</div>
           <div class="panel-body flex-grow">
-
             </br>
           </div>
       </div>
     </div>
 
-    <div class="col-lg-3">
+    <div class="col-lg-12">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les objets fonctionnels du Centre Thermique</div> <!-- Tableaux mutlicolonnes ? -->
           <div class="panel-body flex-grow">
@@ -162,7 +153,7 @@
       </div>
     </div>
 
-    <div class="col-lg-3">
+    <div class="col-lg-10">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les automates du Centre Thermique</div> <!-- Tableaux multicolonnes ? -->
           <div class="panel-body flex-grow">
@@ -170,8 +161,8 @@
           </div>
       </div>
     </div>
-  </div><!--/row-->
-</div><!--/container-->
+  </div>
+<!-- </div> -->
 <!-- Tableau
 <div ng-repeat="item in tab">
   <table>

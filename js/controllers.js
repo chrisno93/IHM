@@ -81,4 +81,11 @@ console.log($scope.adr)
   //      .error(function(data) {
   //          console.log('Error: ' + data);
   //      });
+
+// Date systeme
+function Ctrl($scope)
+{
+  $scope.date = new Date();
+}
+  
 });
