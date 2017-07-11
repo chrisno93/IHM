@@ -24,8 +24,7 @@ var config = {
     // server: 'localhost\\SQLEXPRESS', // You can use 'localhost\\instance' to connect to named instance
     server: '10.18.10.3\\MSSQLSERVER',
     database: 'BDD_DONNEES',
-    //  database: 'BDD_DONNEES',
-
+    
     options: {
         encrypt: true // Use this if you're on Windows Azure
     }
