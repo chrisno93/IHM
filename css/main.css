@@ -127,12 +127,17 @@ html,body {
 .textarea {
   heigth: auto;
   width: auto;
-  display: flex;
-  border:   ;
+  display: block;
+  border: 1px  ;
   font-family: "Roboto" ;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
+}
+
+textarea.form-control{
+  width: 100%;
+  resize: none;
 }
 
 .panel-heading {
