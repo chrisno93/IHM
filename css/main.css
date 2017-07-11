@@ -57,7 +57,7 @@
 	display: flex;
   flex-wrap: nowrap;
 	flex-direction: row;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: stretch;
 }
 
@@ -150,6 +150,17 @@ textarea.form-control{
   font-weight: normal;
   font-style: normal;
   font-size: 14px;
+  flex-shrink : 0 ;
+  flex-basis : auto ;
+  flex-wrap: nowrap;
+}
+
+.panel-primary {
+  background-color: #E9EDF2 !important;
+  font-size: 16px;
+  font-weight: bold !important;
+  font-family: "Roboto"!important;
+  color: #315286 !important;
   flex-shrink : 0 ;
   flex-basis : auto ;
   flex-wrap: nowrap;
