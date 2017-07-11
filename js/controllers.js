@@ -20,8 +20,7 @@ app.controller('AppCtrl', function ( $scope, $http) {
   $scope.rmq =""
   $scope.dat =""
   $scope.der =""
-  $scope.date =""
-
+  
   function get_CT()
   {
     $http.post('/api/CT' , { CT : NumCT } )

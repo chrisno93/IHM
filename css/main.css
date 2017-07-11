@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-html, body{
-    height:100%;
-}
-=======
->>>>>>> origin/master
+
 .btn {
   height : 40px ;
   width: 50px;
@@ -51,7 +46,7 @@ html, body{
   display: flex;
   flex-wrap: nowrap;
 	flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* Espace ?? */
   align-items: stretch;
 
 }
@@ -62,7 +57,7 @@ html, body{
 	display: flex;
   flex-wrap: nowrap;
 	flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: stretch;
 }
 
@@ -104,7 +99,7 @@ html,body {
 }
 
 .row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
-	 margin:-.2px; // hack adjust for wrapping
+	margin:-.2px; // hack adjust for wrapping
 }
 
 .container-flex > div[class*='col-'] div,.row-flex > div[class*='col-'] div {
