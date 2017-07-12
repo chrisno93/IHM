@@ -165,3 +165,7 @@ textarea.form-control{
   flex-basis : auto ;
   flex-wrap: nowrap;
 }
+
+p {
+  padding-left: 16px;
+}
