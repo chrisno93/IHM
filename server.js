@@ -24,7 +24,7 @@ var config = {
     // server: 'localhost\\SQLEXPRESS', // You can use 'localhost\\instance' to connect to named instance
     server: '10.18.10.3\\MSSQLSERVER',
     database: 'BDD_DONNEES',
-    
+
     options: {
         encrypt: true // Use this if you're on Windows Azure
     }
@@ -77,7 +77,8 @@ app.post('/api/CT', function(req, res) {
 var b = req.body;
 console.log(b)
 //var select= "SELECT * From CENTRE_THERMIQUE Where CTH_NUM_CT =\'" + b.CT + "\'"
-var select = "SELECT * From CENTRE_THERMIQUE left join CENTRE_THERMIQUE_TYPE on CTH_CTT_ID = CTT_ID left join STATUT on CTH_STA_ID = STA_ID left join ENERGIE on CTH_NRG_ID = NRG_ID Where CTH_NUM_CT =\'" + b.CT + "\'"
+//var select = "SELECT * From CENTRE_THERMIQUE left join CENTRE_THERMIQUE_TYPE on CTH_CTT_ID = CTT_ID left join STATUT on CTH_STA_ID = STA_ID left join ENERGIE on CTH_NRG_ID = NRG_ID Where CTH_NUM_CT =\'" + b.CT + "\'"
+var select = "SELECT	*  FROM [CENTRE_THERMIQUE] LEFT JOIN CENTRE_THERMIQUE_GRP_EXPLOITATION ON CTG_CTH_ID = CTH_ID LEFT JOIN GROUPE_EXPLOITATION ON  CTG_GRE_ID = GRE_ID LEFT JOIN ROLE_EXPLOITANT ON RXP_ID = CTG_RXP_ID LEFT JOIN STATUT ON CTH_STA_ID = STA_ID LEFT JOIN ENERGIE ON CTH_NRG_ID = NRG_ID LEFT JOIN CENTRE_TECHNIQUE_EQUIPEMENT ON CTE_CTH_ID = CTH_ID LEFT JOIN EQUIPEMENT ON EQP_ID = CTE_EQP_ID WHERE RXP_ID = '1' AND CTH_NUM_CT =\'" + b.CT + "\'"
 query(select,req,res,true)
 });
 

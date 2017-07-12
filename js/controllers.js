@@ -1,5 +1,5 @@
 app.controller('AppCtrl', function ( $scope, $http) {
-  var NumCT = "01410"
+  var NumCT = "10461"
   $scope.tab =  []
   $scope.adr = ""
   $scope.ville = ""
@@ -20,7 +20,8 @@ app.controller('AppCtrl', function ( $scope, $http) {
   $scope.rmq =""
   $scope.dat =""
   $scope.der =""
-  
+  $scope.exp =""
+
   function get_CT()
   {
     $http.post('/api/CT' , { CT : NumCT } )
@@ -46,6 +47,7 @@ app.controller('AppCtrl', function ( $scope, $http) {
                        $scope.rmq = DATA[0].CTH_RMQ_PREV_RENOV
                        $scope.dat = DATA[0].CTH_DAT_DER_RENOV
                        $scope.der = DATA[0].CTH_RMQ_DER_RENOV
+                       $scope.exp = DATA[0].GRE_NOM
                        //$scope.tab = DATA
                    })
        .error(function(data) {
