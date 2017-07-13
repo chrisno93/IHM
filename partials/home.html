@@ -23,7 +23,7 @@
 <div class="container">
 
 <div class= "row-flex">
-    <div class="col-lg-8">
+    <div class="col-lg-5">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Description générale</div>
           <div class="panel-body ">
@@ -105,7 +105,7 @@
     </div>
 
 <div class= "row-flex">
-    <div class="col-lg-2">
+    <div class="col-lg-5">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Nombre de Groupes Fonctionnels</div>
           <div class="panel-body flex-grow">
@@ -142,7 +142,7 @@
 </div>
 
 <div class= "row-flex">
-    <div class="col-lg-2">
+    <div class="col-lg-5">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les "Prestations" P1 P2 P3 P4</div>
           <div class="panel-body flex-grow">
@@ -182,7 +182,7 @@
         <div class="panel-heading">Commentaires</div>
           <div class="panel-body flex-grow">
             <!--Textarea / Récupérer le commentaire et l'insérer dans une table ? -->
-            <textarea class = "form-control" maxlength = "250">La chaufferie est fonctionnelle</textarea>
+            <textarea class = "form-control" maxlength = "250">La chaufferie est fonctionnelle !!!</textarea>
           </div>
       </div>
     </div>
@@ -191,37 +191,36 @@
 <div class= "row-flex">
     <div class="col-lg-12">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading">Les exploitants du Centre Thermique</div> <!-- Tableaux multicolonnes / Liste déroulante ??? -->
-          <div class="panel-body ">
-            <!--  Tableau multicolonnes  : Les Exploitants du Centre Thermique -->
-    <table class="table">
-       <thead>
-         <tr>
-           <th>Rôle</th>
-           <th>Périmètre Exploitation</th>
-           <th>Groupe Exploitation</th>
-           <th>Responsable technique</th>
-           <th>Responsable administratif</th>
-           <th>Contact HO</th>
-           <th>Contact HNO</th>
-           <th>Référence Interne</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td>Exploitant principal</td> <td>{{ exp }}</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
-         </tr>
-         <tr>
-           <td>Suivi d'exploitation</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
-         </tr>
-         <tr>
-           <td>Prise en charge travaux du propriétaire</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
-         </tr>
-       <tr>
-          <td>Exploitant secondaire support</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
-         </tr>
-      </tbody>
-    </table>
+        <div class="panel-heading">Les exploitants du Centre Thermique</div>
+            <div class="panel-body flex-grow">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Rôle</th>
+                    <th>Périmètre Exploitation</th>
+                    <th>Groupe Exploitation</th>
+                    <th>Responsable technique</th>
+                    <th>Responsable administratif</th>
+                    <th>Contact HO</th>
+                    <th>Contact HNO</th>
+                    <th>Référence Interne</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Exploitant principal</td> <td>{{ peri }}</td> <td>{{ exp }}</td> <td>{{ resptech }}</td> <td>{{ respadmin }}</td> <td>{{ cho }}</td> <td>{{ chno }}</td> <td>{{ refinter }}</td>
+                  </tr>
+                  <tr>
+                    <td>Suivi d'exploitation</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
+                  </tr>
+                  <tr>
+                    <td>Prise en charge travaux du propriétaire</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
+                  </tr>
+                  <tr>
+                    <td>Exploitant secondaire support</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
+                  </tr>
+                </tbody>
+              </table>
           </div>
       </div>
     </div>
@@ -249,10 +248,10 @@
               </thead>
                 <tbody>
                   <tr>
-                    <td></td>
+                    <td>Test</td><td>Test</td><td>Test</td><td>Test</td><td>Test</td><td>Test</td><td>Test</td><td>Test</td><td>Test</td><td>Test</td>
                   </tr>
                 </tbody>
-          </table>    
+          </table>
        </div>
       </div>
     </div>
@@ -263,46 +262,22 @@
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les objets fonctionnels du Centre Thermique</div> <!-- Tableaux mutlicolonnes ? -->
           <div class="panel-body flex-grow">
-<!-- Les Objets Fonctionnels du Centre Thermique
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Dénomination</th>
-        <th>Type</th>
-        <th>Référence</th>
-		    <th>Lien vers fiche de consistance</th>
-		    <th>Localisation</th>
-	    </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-	  <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-	  <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-	</tbody>
-  </table>
--->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Dénomination</th>
+                  <th>Type</th>
+                  <th>Référence</th>
+		              <th>Lien vers fiche de consistance</th>
+		              <th>Localisation</th>
+	              </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                    <td>Test</td><td>Test</td><td>Test</td><td>Test</td><td>Test</td>
+                  </tr>
+      	         </tbody>
+               </table>
           </div>
       </div>
     </div>
@@ -311,9 +286,23 @@
 <div class= "row-flex">
     <div class="col-lg-12">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading">Les automates du Centre Thermique</div> <!-- Tableaux multicolonnes ? -->
+        <div class="panel-heading">Les automates du Centre Thermique</div>
           <div class="panel-body flex-grow">
-            </br>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Dénomination</th>
+                  <th>Type</th>
+                  <th>Référence</th>
+		              <th>Lien vers fiche de consistance</th>
+		            </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                    <td>Test</td><td>Test</td><td>Test</td><td>Test</td>
+                  </tr>
+      	         </tbody>
+               </table>
           </div>
       </div>
     </div>

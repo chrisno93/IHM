@@ -1,5 +1,5 @@
 app.controller('AppCtrl', function ( $scope, $http) {
-  var NumCT = "10461"
+  var NumCT = "01305"
   $scope.tab =  []
   $scope.adr = ""
   $scope.ville = ""
@@ -21,6 +21,12 @@ app.controller('AppCtrl', function ( $scope, $http) {
   $scope.dat =""
   $scope.der =""
   $scope.exp =""
+  $scope.peri =""
+  $scope.resptech =""
+  $scope.respadmin =""
+  $scope.cho =""
+  $scope.chno =""
+  $scope.refinter =""
 
   function get_CT()
   {
@@ -47,8 +53,14 @@ app.controller('AppCtrl', function ( $scope, $http) {
                        $scope.rmq = DATA[0].CTH_RMQ_PREV_RENOV
                        $scope.dat = DATA[0].CTH_DAT_DER_RENOV
                        $scope.der = DATA[0].CTH_RMQ_DER_RENOV
-                       $scope.exp = DATA[0].GRE_NOM
-                       //$scope.tab = DATA
+                       $scope.exp = DATA[0].GRE_EXP_COD
+                       $scope.peri = DATA[0].GRE_PERIMETRE_COD
+                       $scope.resptech = DATA[0].GRE_RESP_TECHNIQUE
+                       $scope.respadmin = DATA[0].GRE_RESP_ADM
+                       $scope.cho = DATA[0].GRE_CONTACT_HO
+                       $scope.chno = DATA[0].GRE_CONTACT_HNO
+                       $scope.refinter = DATA[0].GRE_REF_INTERNE
+
                    })
        .error(function(data) {
        console.log('Error: ' + data);

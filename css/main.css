@@ -169,3 +169,15 @@ textarea.form-control{
 p {
   padding-left: 16px;
 }
+
+.table-tbody {
+  font-family: "Roboto" !important;
+  background-color: #E9EDF2;
+  color: #282828 !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+//flex-shrink : 0 ;
+//flex-basis : auto ;
+// flex-wrap: nowrap;
+}
