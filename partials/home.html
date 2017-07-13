@@ -23,11 +23,11 @@
 <div class="container">
 
 <div class= "row-flex">
-    <div class="col-lg-4">
+    <div class="col-lg-8">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Description générale</div>
           <div class="panel-body ">
-          <strong>Numéro du CT : {{ ct }} </strong> <!-- Récupération de l'adresse du CT sélectionné -->
+<!--          <strong>Numéro du CT : {{ ct }} </strong>
             </br>
             Désignation CT : {{ desc }}
             </br>
@@ -54,43 +54,126 @@
             Date de la dernière rénovation / Date d'ouverture : {{  dat }}
             </br>
             Description de la derniére rénovation : {{  der }}
+-->
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Numéro CT</td> <td>{{ ct }}</td>
+                  </tr>
+                  <tr>
+                    <td>Désignation CT</td> <td>{{ desc }}</td>
+                  </tr>
+                  <tr>
+                    <td>Numéro du poste technique</td> <td>{{ pt }}</td>
+                  </tr>
+                  <tr>
+                    <td>Adresse</td> <td>{{ adr }} {{ cp }} {{ ville }}</td>
+                  </tr>
+                  <tr>
+                    <td>Puissance totale installée (kW)</td> <td>{{ puiss }}</td>
+                  </tr>
+                  <tr>
+                    <td>Contrat d'objectif</td> <td>{{ ctr }}</td>
+                  </tr>
+                  <tr>
+                    <td>Type Energie principale</td> <td>{{ nrg }}</td>
+                  </tr>
+                  <tr>
+                    <td>Etat admninistatif</td> <td>{{ stat }}</td>
+                  </tr>
+                  <tr>
+                    <td>Type CT</td> <td>{{ typ }}</td>
+                  </tr>
+                  <tr>
+                    <td>Centre thermique supervisé</td> <td>{{ super }}</td>
+                  </tr>
+                  <tr>
+                    <td>Date prévisionnelle de rénovation</td> <td>{{  prev }}</td>
+                  </tr>
+                  <tr>
+                    <td>Remarque technique sur la prochaine rénovation</td> <td>{{  rmq }}</td>
+                  </tr>
+                  <tr>
+                  <td>Date de la dernière rénovation / Date d'ouverture</td> <td>{{  dat }}</td>
+                  </tr>
+                  <tr>
+                  <td>Description de la derniére rénovation</td> <td>{{  der }}</td>
+                </tbody>
+            </table>
           </div>
       </div>
     </div>
 
-    <div class="col-lg-4">
+<div class= "row-flex">
+    <div class="col-lg-2">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Nombre de Groupes Fonctionnels</div>
           <div class="panel-body flex-grow">
-            Nombre de productions et/ou sous-station chaud :  {{  }} <!-- Récupération table -->
+<!--        Nombre de productions et/ou sous-station chaud :  {{  }}
             </br>
-            Nombre de productions et/ou sous-station froid :  {{  }} <!-- Récupération table-->
+            Nombre de productions et/ou sous-station froid :  {{  }}
             </br>
-            Nombre de réseaux secondaires : {{  }} <!-- Récupération table -->
+            Nombre de réseaux secondaires : {{  }}
             </br>
-            Nombre de CTA : {{  }} <!-- Récupération table -->
+            Nombre de CTA : {{  }}
             </br>
-            Nombre de production ECS : {{  }} <!-- Récupération table -->
+            Nombre de production ECS : {{  }}
             </br>
+-->
+              <table class="table">
+                  <tbody>
+                    <tr>
+                      <td>Nombre de productions et/ou sous stations chaud</td> <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Nombre de productions et/ou sous stations froid</td> <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>Nombre de réseaux secondaires</td> <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>Nombre de CTA</td> <td>1</td>
+                    </tr>
+                  </tbody>
+              </table>
           </div>
       </div>
     </div>
+</div>
 
-    <div class="col-lg-4">
+<div class= "row-flex">
+    <div class="col-lg-2">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les "Prestations" P1 P2 P3 P4</div>
           <div class="panel-body flex-grow">
-            P4 travaux du propriétaire : {{  p4 }}
+<!--        P4 travaux du propriétaire : {{  p4 }}
             </br>
             P3 gros entretien et renouvellement du matériel : {{  p3 }}
             </br>
             P2 conduite de l'installation et travaux de petit entretien : {{  p2 }}
             </br>
             P1 fourniture énergie primaire : {{  p1 }}
-            </br>
+          </br> -->
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <td>P4 travaux du propriétaire</td> <td>{{ p4 }}</td>
+                  </tr>
+                  <tr>
+                    <td>P3 gros entetien et renouvellement du matériel</td> <td>{{ p3 }}</td>
+                  </tr>
+                  <tr>
+                    <td>P2 conduite de l'installation et travaux de petit entretien</td> <td>{{ p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td>P1 fourniture énergie primaire</td> <td>{{ p1 }}</td>
+                  </tr>
+                </tbody>
+            </table>
           </div>
       </div>
     </div>
+  </div>
 </div> <!-- Fin Row Flex -->
 
 <div class= "row-flex">
@@ -98,7 +181,7 @@
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Commentaires</div>
           <div class="panel-body flex-grow">
-            <!--Textarea Elastic / Récupérer le commentaire et l'insérer dans une table ? -->
+            <!--Textarea / Récupérer le commentaire et l'insérer dans une table ? -->
             <textarea class = "form-control" maxlength = "250">La chaufferie est fonctionnelle</textarea>
           </div>
       </div>
@@ -108,16 +191,37 @@
 <div class= "row-flex">
     <div class="col-lg-12">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading">Les exploitants du Centre Thermique</div> <!-- Tableaux multicolonnes  ??? -->
+        <div class="panel-heading">Les exploitants du Centre Thermique</div> <!-- Tableaux multicolonnes / Liste déroulante ??? -->
           <div class="panel-body ">
-          <strong>Exploitant principal : {{ exp }}</strong>
-            </br>
-          Suivi exploitation : {{ }}
-            </br>
-          Prise en charge travaux du propriétaire : {{ }}
-            </br>
-          Exploitant secondaire support : {{ }}
-            </br>
+            <!--  Tableau multicolonnes  : Les Exploitants du Centre Thermique -->
+    <table class="table">
+       <thead>
+         <tr>
+           <th>Rôle</th>
+           <th>Périmètre Exploitation</th>
+           <th>Groupe Exploitation</th>
+           <th>Responsable technique</th>
+           <th>Responsable administratif</th>
+           <th>Contact HO</th>
+           <th>Contact HNO</th>
+           <th>Référence Interne</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Exploitant principal</td> <td>{{ exp }}</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
+         </tr>
+         <tr>
+           <td>Suivi d'exploitation</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
+         </tr>
+         <tr>
+           <td>Prise en charge travaux du propriétaire</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
+         </tr>
+       <tr>
+          <td>Exploitant secondaire support</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
+         </tr>
+      </tbody>
+    </table>
           </div>
       </div>
     </div>
@@ -128,8 +232,28 @@
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Equipements du centre thermique</div>
           <div class="panel-body flex-grow">
-            </br>
-          </div>
+           <table class="table">
+             <thead>
+               <tr>
+                 <th>Equipement</th>
+                 <th>Numéro d'équipement</th>
+                 <th>Adresse</th>
+                 <th>Chef d'établissement/contact</th>
+                 <th>Numéro de téléphone</th>
+                 <th>Type d'équipement</th>
+                 <th>Service fonctionnel</th>
+                 <th>Service gestionnaire</th>
+                 <th>Collectivité</th>
+                 <th>Nombre de capteurs de confiance</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </tbody>
+          </table>    
+       </div>
       </div>
     </div>
 </div>
@@ -139,9 +263,46 @@
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les objets fonctionnels du Centre Thermique</div> <!-- Tableaux mutlicolonnes ? -->
           <div class="panel-body flex-grow">
-            <!-- Liste déroulante et tableau -->
-            </br>
-            <!-- Liste déroulante et tableau -->
+<!-- Les Objets Fonctionnels du Centre Thermique
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Dénomination</th>
+        <th>Type</th>
+        <th>Référence</th>
+		    <th>Lien vers fiche de consistance</th>
+		    <th>Localisation</th>
+	    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+	  <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+	  <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+	</tbody>
+  </table>
+-->
           </div>
       </div>
     </div>
