@@ -27,6 +27,15 @@ app.controller('AppCtrl', function ( $scope, $http) {
   $scope.cho =""
   $scope.chno =""
   $scope.refinter =""
+  $scope.eqp =""
+  $scope.numeqp =""
+  $scope.eqpadr =""
+  $scope.eqpcontact =""
+  $scope.eqptel =""
+  $scope.eqsvcefonc =""
+  $scope.eqpsvceges =""
+  $scope.coll =""
+  $scope.nbcapt =""
 
   function get_CT()
   {
@@ -60,6 +69,15 @@ app.controller('AppCtrl', function ( $scope, $http) {
                        $scope.cho = DATA[0].GRE_CONTACT_HO
                        $scope.chno = DATA[0].GRE_CONTACT_HNO
                        $scope.refinter = DATA[0].GRE_REF_INTERNE
+                       $scope.eqp =DATA[0].EQP_DESIGNATION
+                       $scope.numeqp =DATA[0].EQP_NUM
+                       $scope.eqpadr =DATA[0].EQP_ADRESSE
+                       $scope.eqpcontact =DATA[0].EQP_CONTACT
+                       $scope.eqptel =DATA[0].EQP_CONTACT_TEL
+                       $scope.eqsvcefonc =DATA[0].EQP_SERVICE_FON
+                       $scope.eqpsvceges =DATA[0].EQP_SERVICE_GES
+                       $scope.coll = DATA[0].COL_LBL
+                       $scope.nbcapt =DATA[0].EQP_NB_CAPTEUR
 
                    })
        .error(function(data) {
