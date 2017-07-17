@@ -22,39 +22,11 @@
 <!-- Container Flex -->
 <div class="container">
 
-<div class= "row-flex">
-    <div class="col-lg-5">
+  <div class= "row-flex">
+    <div class="col-lg-9">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Description générale</div>
           <div class="panel-body ">
-<!--          <strong>Numéro du CT : {{ ct }} </strong>
-            </br>
-            Désignation CT : {{ desc }}
-            </br>
-            Numéro du poste technique : {{ pt }}
-            </br>
-            Adresse : {{ adr }} {{ cp }} {{  ville }}
-            </br>
-            Puissance totale installée (kW) : {{  puiss }}
-            </br>
-            Contrat d'objectif : {{  ctr }}
-            </br>
-            Type Energie principale : {{  nrg }}
-            </br>
-            Etat administratif : {{  stat }}
-            </br>
-            Type CT : {{  typ }}
-            </br>
-            Centre thermique supervisé : {{  super }}
-            </br>
-            Date prévisionnelle de rénovation : {{  prev }}
-            </br>
-            Remarque technique sur la prochaine rénovation : {{  rmq }}
-            </br>
-            Date de la dernière rénovation / Date d'ouverture : {{  dat }}
-            </br>
-            Description de la derniére rénovation : {{  der }}
--->
             <table class="table">
                 <tbody>
                   <tr>
@@ -102,25 +74,14 @@
             </table>
           </div>
       </div>
-    </div>
 
-<div class= "row-flex">
-    <div class="col-lg-5">
+    <div class="col-lg-3">
+      <div class= "row-flex">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Nombre de Groupes Fonctionnels</div>
           <div class="panel-body flex-grow">
-<!--        Nombre de productions et/ou sous-station chaud :  {{  }}
-            </br>
-            Nombre de productions et/ou sous-station froid :  {{  }}
-            </br>
-            Nombre de réseaux secondaires : {{  }}
-            </br>
-            Nombre de CTA : {{  }}
-            </br>
-            Nombre de production ECS : {{  }}
-            </br>
--->
-              <table class="table"> <!-- Faire comptage dans la table -->
+            <table class="table"> <!-- Faire comptage dans la table -->
+              <!--  <thead></thead> -->
                   <tbody>
                     <tr>
                       <td>Nombre de productions et/ou sous stations chaud</td> <td>3</td>
@@ -139,22 +100,13 @@
           </div>
       </div>
     </div>
-</div>
 
-<div class= "row-flex">
-    <div class="col-lg-5">
+    <div class= "row-flex">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les "Prestations" P1 P2 P3 P4</div>
           <div class="panel-body flex-grow">
-<!--        P4 travaux du propriétaire : {{  p4 }}
-            </br>
-            P3 gros entretien et renouvellement du matériel : {{  p3 }}
-            </br>
-            P2 conduite de l'installation et travaux de petit entretien : {{  p2 }}
-            </br>
-            P1 fourniture énergie primaire : {{  p1 }}
-          </br> -->
             <table class="table">
+              <!--  <thead></thead> -->
                 <tbody>
                   <tr>
                     <td>P4 travaux du propriétaire</td> <td>{{ p4 }}</td>
@@ -172,9 +124,10 @@
             </table>
           </div>
       </div>
-    </div>
-  </div>
-</div> <!-- Fin Row Flex -->
+    </div> <!-- Fin row-flex -->
+  </div> <!-- Fin lg-4 -->
+</div> <!-- Fin lg-8 -->
+</div> <!-- Fin 1ère ligne -->
 
 <div class= "row-flex">
     <div class="col-lg-12">
