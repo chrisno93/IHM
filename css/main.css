@@ -61,10 +61,10 @@
   align-items: stretch;
 }
 
-.disabled
-{
+//.disabled
+//{
 
-}
+//}
 
 .left
 {
@@ -173,11 +173,21 @@ p {
 .table-tbody {
   font-family: "Roboto" !important;
   background-color: #E9EDF2;
-  color: #282828 !important;
+  color: #000000 !important;
   font-weight: normal;
   font-style: normal;
   font-size: 14px;
+  text-align: left;
 //flex-shrink : 0 ;
 //flex-basis : auto ;
 // flex-wrap: nowrap;
+}
+
+th {
+  font-family: "Roboto" !important;
+  background-color: #E9EDF2;
+  color: #315286 !important;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: left;
 }
