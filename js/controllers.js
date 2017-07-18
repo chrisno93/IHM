@@ -1,5 +1,6 @@
 app.controller('AppCtrl', function ( $scope, $http) {
   var NumCT = "01305"
+  var date = new Date();
   $scope.tab =  []
   $scope.adr = ""
   $scope.ville = ""
@@ -36,6 +37,7 @@ app.controller('AppCtrl', function ( $scope, $http) {
   $scope.eqpsvceges =""
   $scope.coll =""
   $scope.nbcapt =""
+  $scope.FromDate = ('0' + date.getDate()).slice(-2)  + '-' +  ('0' + (date.getMonth() + 1)).slice(-2) + '-' +  date.getFullYear();
 
   function get_CT()
   {
@@ -113,11 +115,5 @@ console.log($scope.adr)
   //      .error(function(data) {
   //          console.log('Error: ' + data);
   //      });
-
-// Date systeme
-function Ctrl($scope)
-{
-  $scope.date = new Date();
-}
 
 });
