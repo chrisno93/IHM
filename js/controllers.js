@@ -1,48 +1,14 @@
-app.controller('AppCtrl', function ( $scope, $http) {
-  var NumCT = "01305"
+app.controller('AppCtrl', function ( $scope, $http ) {
+  // console.log($stateParams.CT) ;
+  var NumCT = "01022"
   var date = new Date();
-  $scope.tab =  []
-  $scope.adr = ""
-  $scope.ville = ""
-  $scope.puiss = ""
-  $scope.desc =""
-  $scope.p1 =""
-  $scope.p1 =""
-  $scope.p1 =""
-  $scope.p1 =""
-  $scope.pt =""
-  $scope.ct =""
-  $scope.ctr =""
-  $scope.super =""
-  $scope.typ =""
-  $scope.stat =""
-  $scope.nrg =""
-  $scope.prev =""
-  $scope.rmq =""
-  $scope.dat =""
-  $scope.der =""
-  $scope.exp =""
-  $scope.peri =""
-  $scope.resptech =""
-  $scope.respadmin =""
-  $scope.cho =""
-  $scope.chno =""
-  $scope.refinter =""
-  $scope.eqp =""
-  $scope.numeqp =""
-  $scope.eqpadr =""
-  $scope.eqpcontact =""
-  $scope.eqptel =""
-  $scope.eqsvcefonc =""
-  $scope.eqpsvceges =""
-  $scope.coll =""
-  $scope.nbcapt =""
-  $scope.FromDate = ('0' + date.getDate()).slice(-2)  + '-' +  ('0' + (date.getMonth() + 1)).slice(-2) + '-' +  date.getFullYear();
 
   function get_CT()
   {
     $http.post('/api/CT' , { CT : NumCT } )
        .success(function(data) {
+         console.log(data)
+         $scope.Exp = data
                        DATA = data ;
                        $scope.adr = DATA[0].CTH_ADRESSE
                        $scope.cp = DATA[0].CTH_CODE_POSTAL
@@ -80,13 +46,26 @@ app.controller('AppCtrl', function ( $scope, $http) {
                        $scope.eqpsvceges =DATA[0].EQP_SERVICE_GES
                        $scope.coll = DATA[0].COL_LBL
                        $scope.nbcapt =DATA[0].EQP_NB_CAPTEUR
-                      
+                      //
                    })
        .error(function(data) {
        console.log('Error: ' + data);
        });
 
+$http.post('/api/Exp' , { CT : NumCT } )
+.success(function(data) {
+  console.log(data)
+  $scope.Exp = data ;
+});
+
+//$http.post('/api/Eqp' , { CT : NumCT } )
+//.success(function(data) {
+//  console.log(data)
+//  $scope.Exp = data ;
+//});
        }
+       
+$scope.FromDate = ('0' + date.getDate()).slice(-2)  + '-' +  ('0' + (date.getMonth() + 1)).slice(-2) + '-' +  date.getFullYear();
 
    get_CT();
 

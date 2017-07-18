@@ -14,7 +14,7 @@ app.use(morgan('dev')); //Log server
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-opn('http://localhost:4000', {app: 'chrome'});
+// opn('http://localhost:4000', {app: 'chrome'});
 
 var config = {
     user: 'sa',
@@ -55,27 +55,61 @@ function query(query, req, res, read) { //read = true only for SELECT query
 }
 
 // Appel d'une procédure stockée pour ramener les valeurs à vériifer
-//const request = new sql.Request()
-//request.input('@NUM_CT', sql.NVarChar, '01305')
-//request.output('output_parameter', sql.NVarChar)
-//request.execute('IHM_GET_CENTRE_THERMIQUE', (err, result) => {
-    // ... error checks
-//     console.log(err, result);
-//});
+// var request = new sql.Request()
+// request.input('NUM_CT', '01305')
+// // request.output('output_parameter', sql.NVarChar)
+// request.execute('IHM_GET_CENTRE_THERMIQUE', (err, result) => {
+//     console.log(result);
+//     console.log(err);
+// });
 
 // app.get('/api/event', function(req, res) {
 // query('Select id,CT,DGF,Debut as "start", Fin as "end", Evenement as "title" from dbo.Evenements',req,res, true)
 // });
 
-// Requête en dur !!! Pour test fonctionne !!!!!!
+// Procédure stockée Centre Thermique
 app.post('/api/CT', function(req, res) {
 var b = req.body;
-console.log(b)
+// console.log(b)
+// Appel d'une procédure stockée pour ramener les valeurs à vériifer
+var request = new sql.Request()
+request.input('NUM_CT', sql.NVarChar, b.CT)
+// request.output('output_parameter', sql.NVarChar)
+request.execute('IHM_GET_CENTRE_THERMIQUE', (err, result) => {
+  if (err) res.send(err)
+  else res.send(result.recordset)
+});
+});
+// Procédure stockée Groupe Exploitation
+app.post('/api/Exp', function(req, res) {
+var b = req.body;
+// console.log(b)
+// Appel d'une procédure stockée pour ramener les valeurs à vériifer
+var request = new sql.Request()
+request.input('NUM_CT', sql.NVarChar, b.CT)
+// request.output('output_parameter', sql.NVarChar)
+request.execute('IHM_GET_CENTRE_THERMIQUE_GROUPE_EXPLOITATION', (err, result) => {
+  if (err) res.send(err)
+  else res.send(result.recordset)
+});
+});
+// Procédure stockée Equipement
+app.post('/api/Eqp', function(req, res) {
+var b = req.body;
+//console.log(b)
+// Appel d'une procédure stockée pour ramener les valeurs à vériifer
+var request = new sql.Request()
+request.input('NUM_CT', sql.NVarChar, b.CT)
+// request.output('output_parameter', sql.NVarChar)
+request.execute('IHM_GET_CENTRE_THERMIQUE_EQUIPEMENT', (err, result) => {
+  if (err) res.send(err)
+  else res.send(result.recordset)
+});
+});
 //var select= "SELECT * From CENTRE_THERMIQUE Where CTH_NUM_CT =\'" + b.CT + "\'"
 //var select = "SELECT * From CENTRE_THERMIQUE left join CENTRE_THERMIQUE_TYPE on CTH_CTT_ID = CTT_ID left join STATUT on CTH_STA_ID = STA_ID left join ENERGIE on CTH_NRG_ID = NRG_ID Where CTH_NUM_CT =\'" + b.CT + "\'"
-var select = "SELECT	*  FROM [CENTRE_THERMIQUE] LEFT JOIN CENTRE_THERMIQUE_GRP_EXPLOITATION ON CTG_CTH_ID = CTH_ID LEFT JOIN GROUPE_EXPLOITATION ON  CTG_GRE_ID = GRE_ID LEFT JOIN ROLE_EXPLOITANT ON RXP_ID = CTG_RXP_ID LEFT JOIN STATUT ON CTH_STA_ID = STA_ID LEFT JOIN ENERGIE ON CTH_NRG_ID = NRG_ID LEFT JOIN CENTRE_TECHNIQUE_EQUIPEMENT ON CTE_CTH_ID = CTH_ID LEFT JOIN EQUIPEMENT ON EQP_ID = CTE_EQP_ID LEFT JOIN COLLECTIVITE ON COL_ID = EQP_COL_ID WHERE RXP_ID = '1' AND CTH_NUM_CT =\'" + b.CT + "\'"
-query(select,req,res,true)
-});
+// var select = "SELECT	*  FROM [CENTRE_THERMIQUE] LEFT JOIN CENTRE_THERMIQUE_GRP_EXPLOITATION ON CTG_CTH_ID = CTH_ID LEFT JOIN GROUPE_EXPLOITATION ON  CTG_GRE_ID = GRE_ID LEFT JOIN ROLE_EXPLOITANT ON RXP_ID = CTG_RXP_ID LEFT JOIN STATUT ON CTH_STA_ID = STA_ID LEFT JOIN ENERGIE ON CTH_NRG_ID = NRG_ID LEFT JOIN CENTRE_TECHNIQUE_EQUIPEMENT ON CTE_CTH_ID = CTH_ID LEFT JOIN EQUIPEMENT ON EQP_ID = CTE_EQP_ID LEFT JOIN COLLECTIVITE ON COL_ID = EQP_COL_ID WHERE RXP_ID = '1' AND CTH_NUM_CT =\'" + b.CT + "\'"
+// query(select,req,res,true)
 
 // app.post('/api/LISTE', function(req,res)) {
 // var c = req.body;
