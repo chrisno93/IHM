@@ -54,25 +54,20 @@ function query(query, req, res, read) { //read = true only for SELECT query
     // return p1 * p2;  // The function returns the product of p1 and p2
 }
 
-// Appel d'une procédure stockée pour ramener les valeurs
+// Appel d'une procédure stockée pour ramener les valeurs à vériifer
 //const request = new sql.Request()
-//request.input('input_parameter', sql.Int, value)
-//request.output('output_parameter', sql.Int)
-//request.execute('SELECT_CENTRE_THERMIQUE', (err, result) => {
-// ... error checks
-//console.log(result.recordsets.length) // count of recordsets returned by the procedure
-//console.log(result.recordsets[0].length) // count of rows contained in first recordset
-//console.log(result.recordset) // first recordset from result.recordsets
-//console.log(result.returnValue) // procedure return value
-//console.log(result.output) // key/value collection of output values
-//console.log(result.rowsAffected) // array of numbers, each number represents the number of rows affected by executed statemens
-//})
+//request.input('@NUM_CT', sql.NVarChar, '01305')
+//request.output('output_parameter', sql.NVarChar)
+//request.execute('IHM_GET_CENTRE_THERMIQUE', (err, result) => {
+    // ... error checks
+//     console.log(err, result);
+//});
 
 // app.get('/api/event', function(req, res) {
 // query('Select id,CT,DGF,Debut as "start", Fin as "end", Evenement as "title" from dbo.Evenements',req,res, true)
 // });
 
-// Requête en dur !
+// Requête en dur !!! Pour test fonctionne !!!!!!
 app.post('/api/CT', function(req, res) {
 var b = req.body;
 console.log(b)
@@ -112,9 +107,8 @@ app.use(function(req, res, next){
  });
 
 //     var request =  new sql.Request()
-//
-//      //    .input('input_parameter', sql.Int, value)
-//       // .query('select TOP 5 * from SUPERVISION where id = @input_parameter').then(function(recordset) {
+//    .input('input_parameter', sql.Int, value)
+//    .query('select TOP 5 * from SUPERVISION where id = @input_parameter').then(function(recordset) {
 //
 //       .query('select TOP '+ SELECT + ' * from dbo.SUPERVISION  ').then(function(recordset) {
 //
@@ -134,12 +128,3 @@ app.use(function(req, res, next){
 //         console.log(err.name + ' --> ' + err.code + ' : ' + err.message);
 //
 //     });
-
-      // use mongoose to get all todos in the database
-      // Todo.find(function(err, todos) {
-      //
-      //     // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-      //     if (err)
-      //         res.send(err)
-      //
-      //     res.json(todos); // return all todos in JSON format

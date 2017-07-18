@@ -80,7 +80,7 @@ app.controller('AppCtrl', function ( $scope, $http) {
                        $scope.eqpsvceges =DATA[0].EQP_SERVICE_GES
                        $scope.coll = DATA[0].COL_LBL
                        $scope.nbcapt =DATA[0].EQP_NB_CAPTEUR
-
+                      
                    })
        .error(function(data) {
        console.log('Error: ' + data);
