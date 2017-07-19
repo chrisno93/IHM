@@ -16,7 +16,7 @@
 <script src="node_modules/angular1/es6/dev/src/testing/shims_for_IE.js"></script>
 
 <div class = "panel panel-primary">
-  <p> CT{{ ct }} </p> <!-- Récupérer de manière dynamique le Numéro de CT !! -->
+  <p> CT{{ ct }} </p> <!-- Récupérer de manière dynamique le Numéro de CT ou le passer en paramètre dans l'url  !! -->
 </div>
 
 <!-- Container Flex -->
@@ -162,7 +162,7 @@
                 </thead>
                 <tbody>
                   <tr ng-repeat ="item in Exp" >
-                    <td>{{item.RXP_LBL}}</td> <td>{{ item.GRE_PERIMETRE_COD }}</td> <td>{{ item.GRE_EXP_COD }}</td> <td>{{ item.GRE_RESP_TECHNIQUE }}</td> <td>{{ item.GRE_RESP_TECHNIQUE }}</td> <td>{{ item.CONTACT_HO }}</td> <td>{{ item.CONTACT_HNO }}</td>
+                    <td>{{item.RXP_LBL}}</td> <td>{{ item.GRE_PERIMETRE_COD }}</td> <td>{{ item.GRE_EXP_COD }}</td> <td>{{ item.GRE_RESP_TECHNIQUE }}</td> <td>{{ item.GRE_RESP_ADM }}</td> <td>{{ item.CONTACT_HO }}</td> <td>{{ item.CONTACT_HNO }}</td>
                     <td>{{ item.GRE_REF_INTERNE }}</td>
                   </tr>
                 </tbody>
@@ -193,7 +193,7 @@
                 </tr>
               </thead>
                 <tbody>
-                  <tr ng-repeat ="item in Eqp" >
+                  <tr ng-repeat ="item in Eqpt " >
                     <td>{{item.EQP_DESIGNATION}}</td> <td>{{ item.EQP_NUM}}</td> <td>{{ item.EQP_ADRESSE }}</td> <td>{{ item.EQP_CONTACT }}</td> <td> {{ item.EQP_CONTACT_TEL }} </td> <td>{{ item.EQT_DESIGNATION }}</td> <td>{{ item.EQP_SERVICE_FON }}</td>
                     <td>{{ item.EQP_SERVICE_GES }}</td> <td>{{ item.COL_LBL }}</td> <td>{{ item.EQP_NB_CAPTEUR }}</td>
                   </tr>
@@ -211,7 +211,7 @@
           <div class="panel-body flex-grow">
             <table class="table">
               <thead>
-                <tr> <!-- ?? A voir -->
+                <tr>
                   <th>Dénomination</th>
                   <th>Type</th>
                   <th>Référence</th>
@@ -220,10 +220,10 @@
 	              </tr>
               </thead>
                 <tbody>
+                  <tr ng-repeat ="item in ObjFonc " >
+                    <td>{{item.GRF_DESCR}}</td> <td>{{ item.GFT_TYPE}}</td> <td>{{ item.OBF_COD }}</td> <td></td> <td>{{ item.CTH_NUM_CT }}</td>
                   <tr>
-                    <td>Test</td><td>Test</td><td>Test</td><td>Test</td><td>Test</td>
-                  </tr>
-      	         </tbody>
+                </tbody>
                </table>
           </div>
       </div>
@@ -237,7 +237,7 @@
           <div class="panel-body flex-grow">
             <table class="table">
               <thead>
-                <tr> <!-- ?? A voir -->
+                <tr>
                   <th>Dénomination</th>
                   <th>Type</th>
                   <th>Référence</th>
@@ -246,7 +246,7 @@
               </thead>
                 <tbody>
                   <tr>
-                    <td>Test</td><td>Test</td><td>Test</td><td>Test</td>
+                    <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
                   </tr>
       	         </tbody>
                </table>

@@ -1,9 +1,4 @@
 /**
- * AngularJS Tutorial 1
- * @author Nick Kaye <nick.c.kaye@gmail.com>
- */
-
-/**
  * Main AngularJS Web Application
  */
 var app = angular.module('myApp', [ 'ui.router']);
@@ -19,5 +14,16 @@ app.config(['$stateProvider','$urlRouterProvider', function ($stateProvider,$url
         controller: 'AppCtrl'
       })
 
-  $urlRouterProvider.otherwise('/home');
+//  $urlRouterProvider.otherwise('/home');
+//  .controller(
+//    'AppCtrl',
+//    function($scope, $state) {
+//      $scope.goSomewhere = function($state) {
+//          $state.go(
+//            '',
+//            {variable : 'CT'}
+//          );
+//      }
+//  })
+
 }]);

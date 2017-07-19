@@ -1,6 +1,6 @@
 app.controller('AppCtrl', function ( $scope, $http ) {
-  // console.log($stateParams.CT) ;
-  var NumCT = "01022"
+  //console.log($stateParams.CT) ;
+  var NumCT = "12527"
   var date = new Date();
 
   function get_CT()
@@ -8,7 +8,7 @@ app.controller('AppCtrl', function ( $scope, $http ) {
     $http.post('/api/CT' , { CT : NumCT } )
        .success(function(data) {
          console.log(data)
-         $scope.Exp = data
+         //$scope.Exp = data
                        DATA = data ;
                        $scope.adr = DATA[0].CTH_ADRESSE
                        $scope.cp = DATA[0].CTH_CODE_POSTAL
@@ -52,27 +52,41 @@ app.controller('AppCtrl', function ( $scope, $http ) {
        console.log('Error: ' + data);
        });
 
-$http.post('/api/Exp' , { CT : NumCT } )
-.success(function(data) {
-  console.log(data)
-  $scope.Exp = data ;
-});
+       $http.post('/api/Exp' , { CT : NumCT } )
+       .success(function(data) {
+         console.log(data)
+         $scope.Exp = data ;
+       });
 
-//$http.post('/api/Eqp' , { CT : NumCT } )
-//.success(function(data) {
-//  console.log(data)
-//  $scope.Exp = data ;
-//});
-       }
-       
-$scope.FromDate = ('0' + date.getDate()).slice(-2)  + '-' +  ('0' + (date.getMonth() + 1)).slice(-2) + '-' +  date.getFullYear();
+        $http.post('/api/Eqpt' , { CT : NumCT } )
+        .success(function(data) {
+        console.log(data)
+        $scope.Eqpt = data ;
+        });
 
-   get_CT();
+        $http.post('/api/ObjFonc' , { CT : NumCT } )
+        .success(function(data) {
+        console.log(data)
+        $scope.ObjFonc = data ;
+        });
 
-   $scope.$watch('adr', function (newValue,oldValue)
-{
-console.log($scope.adr)
-})
+      }
+    get_CT();
+
+   //function get_Eqpt() {
+   // $http.post('/api/Eqpt' , { CT : NumCT } )
+   // .success(function(data) {
+   // console.log(data)
+   // $scope.Exp = data ;
+   // });
+   //}
+   //get_Eqpt();
+
+  $scope.FromDate = ('0' + date.getDate()).slice(-2)  + '-' +  ('0' + (date.getMonth() + 1)).slice(-2) + '-' +  date.getFullYear();
+//   $scope.$watch('adr', function (newValue,oldValue)
+//{
+//console.log($scope.adr)
+//})
 
   //  function update_post(event)
   //  {
