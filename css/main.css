@@ -121,7 +121,7 @@ html,body {
 
 .textarea {
   heigth: auto;
-  width: auto;
+  width: 100%;
   display: block;
   border: 1px  ;
   font-family: "Roboto" ;
@@ -130,9 +130,9 @@ html,body {
   font-size: 14px;
 }
 
-textarea.form-control{
-  width: 100%;
-  resize: none;
+textarea.form-control {
+   width: 100%;
+   resize: none;
 }
 
 .panel-heading {

@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 var opn = require('opn');
 var bodyParser = require("body-parser");
-var morgan = require('morgan');             
+var morgan = require('morgan');
 // Binding express app to port 3000
 app.listen(4000,function(){
     console.log('Node server running @ http://localhost:4000')
@@ -110,21 +110,8 @@ request.execute('IHM_GET_CENTRE_THERMIQUE_OBJET_FONCTIONNEL', (err, result) => {
 });
 });
 
-//var select= "SELECT * From CENTRE_THERMIQUE Where CTH_NUM_CT =\'" + b.CT + "\'"
-//var select = "SELECT * From CENTRE_THERMIQUE left join CENTRE_THERMIQUE_TYPE on CTH_CTT_ID = CTT_ID left join STATUT on CTH_STA_ID = STA_ID left join ENERGIE on CTH_NRG_ID = NRG_ID Where CTH_NUM_CT =\'" + b.CT + "\'"
 // var select = "SELECT	*  FROM [CENTRE_THERMIQUE] LEFT JOIN CENTRE_THERMIQUE_GRP_EXPLOITATION ON CTG_CTH_ID = CTH_ID LEFT JOIN GROUPE_EXPLOITATION ON  CTG_GRE_ID = GRE_ID LEFT JOIN ROLE_EXPLOITANT ON RXP_ID = CTG_RXP_ID LEFT JOIN STATUT ON CTH_STA_ID = STA_ID LEFT JOIN ENERGIE ON CTH_NRG_ID = NRG_ID LEFT JOIN CENTRE_TECHNIQUE_EQUIPEMENT ON CTE_CTH_ID = CTH_ID LEFT JOIN EQUIPEMENT ON EQP_ID = CTE_EQP_ID LEFT JOIN COLLECTIVITE ON COL_ID = EQP_COL_ID WHERE RXP_ID = '1' AND CTH_NUM_CT =\'" + b.CT + "\'"
 // query(select,req,res,true)
-
-// app.post('/api/LISTE', function(req,res)) {
-// var c = req.body;
-// console.log(c)
-// var select= "SELECT * From CENTRE_THERMIQUE Where CTH_NUM_PT =\'" + c.LISTE + "\'"
-// query(select,req,res,true)
-// });
-
-// CallableStatement cs = conn.prepareCall("{call SHOW_FOURNISSEURS}");
-// ResultSet rs = cs.executeQuery();
-
 // app.post('/api/delete', function(req, res) {
 // var b = req.body;
 // console.log(b)<z

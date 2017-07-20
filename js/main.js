@@ -10,20 +10,8 @@ app.config(['$stateProvider','$urlRouterProvider', function ($stateProvider,$url
   $stateProvider
         .state('home', {
         url: '/home',
+        //url: '/home/:{CT}'
         templateUrl: 'partials/home.html',
         controller: 'AppCtrl'
       })
-
-//  $urlRouterProvider.otherwise('/home');
-//  .controller(
-//    'AppCtrl',
-//    function($scope, $state) {
-//      $scope.goSomewhere = function($state) {
-//          $state.go(
-//            '',
-//            {variable : 'CT'}
-//          );
-//      }
-//  })
-
 }]);

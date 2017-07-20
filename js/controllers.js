@@ -1,5 +1,4 @@
 app.controller('AppCtrl', function ( $scope, $http ) {
-  //console.log($stateParams.CT) ;
   var NumCT = "12527"
   var date = new Date();
 
@@ -8,7 +7,7 @@ app.controller('AppCtrl', function ( $scope, $http ) {
     $http.post('/api/CT' , { CT : NumCT } )
        .success(function(data) {
          console.log(data)
-         //$scope.Exp = data
+
                        DATA = data ;
                        $scope.adr = DATA[0].CTH_ADRESSE
                        $scope.cp = DATA[0].CTH_CODE_POSTAL
@@ -73,40 +72,6 @@ app.controller('AppCtrl', function ( $scope, $http ) {
       }
     get_CT();
 
-   //function get_Eqpt() {
-   // $http.post('/api/Eqpt' , { CT : NumCT } )
-   // .success(function(data) {
-   // console.log(data)
-   // $scope.Exp = data ;
-   // });
-   //}
-   //get_Eqpt();
-
-  $scope.FromDate = ('0' + date.getDate()).slice(-2)  + '-' +  ('0' + (date.getMonth() + 1)).slice(-2) + '-' +  date.getFullYear();
-//   $scope.$watch('adr', function (newValue,oldValue)
-//{
-//console.log($scope.adr)
-//})
-
-  //  function update_post(event)
-  //  {
-  //    var toSend = {Id : event.id , CT : event.CT , DGF : event.DGF , Title: event.title , Debut : event.start._d.toISOString(), Fin : event.end._d.toISOString() }
-  //    $http.post('/api/event' , toSend )
-  //    .success(function(data) {
-  //                    console.log(data);
-  //                })
-  //    .error(function(data) {
-  //    console.log('Error: ' + data);
-  //    });
-  //  }
-
-  // $http.get('/api/event')
-  //      .success(function(data) {
-  //           console.log(data)
-  //
-  //           })
-  //      .error(function(data) {
-  //          console.log('Error: ' + data);
-  //      });
+      $scope.FromDate = ('0' + date.getDate()).slice(-2)  + '-' +  ('0' + (date.getMonth() + 1)).slice(-2) + '-' +  date.getFullYear();
 
 });
