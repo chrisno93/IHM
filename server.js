@@ -98,13 +98,26 @@ request.execute('IHM_GET_CENTRE_THERMIQUE_EQUIPEMENT', (err, result) => {
 });
 
 // Procédure stockée Objet Fonctionnel
-app.post('/api/ObjFonc', function(req, res) {
+app.post('/api/GpeFonc', function(req, res) {
 var b = req.body;
 console.log(b)
 var request = new sql.Request()
 request.input('NUM_CT', sql.NVarChar, b.CT)
 // request.output('output_parameter', sql.NVarChar)
-request.execute('IHM_GET_CENTRE_THERMIQUE_OBJET_FONCTIONNEL', (err, result) => {
+request.execute('IHM_GET_CENTRE_THERMIQUE_GROUPE_FONCTIONNEL', (err, result) => {
+  if (err) res.send(err)
+  else res.send(result.recordset)
+});
+});
+
+// Procédure stockée Objet Fonctionnel
+app.post('/api/NbeGroup', function(req, res) {
+var b = req.body;
+console.log(b)
+var request = new sql.Request()
+request.input('NUM_CT', sql.NVarChar, b.CT)
+// request.output('output_parameter', sql.NVarChar)
+request.execute('IHM_GET_NB_GROUPE_FONCTIONNEL', (err, result) => {
   if (err) res.send(err)
   else res.send(result.recordset)
 });
@@ -120,10 +133,6 @@ request.execute('IHM_GET_CENTRE_THERMIQUE_OBJET_FONCTIONNEL', (err, result) => {
 //    });
 
 app.use('/',  express.static(__dirname + '/')); //Fichier a servir
-
-// app.get('*',function(req,res){
-//     res.sendFile('index.html',{'root': __dirname });
-// });
 
 app.use(function(req, res, next){
   res.status(404);

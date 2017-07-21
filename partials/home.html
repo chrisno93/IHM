@@ -82,20 +82,11 @@
           <div class="panel-body flex-grow">
             <table class="table"> <!-- Faire comptage dans la table -->
               <!--  <thead></thead> -->
-                  <tbody>
-                    <tr>
-                      <td>Nombre de productions et/ou sous stations chaud</td> <td>3</td>
-                    </tr>
-                    <tr>
-                      <td>Nombre de productions et/ou sous stations froid</td> <td>2</td>
-                    </tr>
-                    <tr>
-                      <td>Nombre de réseaux secondaires</td> <td>1</td>
-                    </tr>
-                    <tr>
-                      <td>Nombre de CTA</td> <td>1</td>
-                    </tr>
-                  </tbody>
+              <tbody>
+                <tr ng-repeat ="item in NbeGroup" >
+                  <td>{{item.LIBELLE_GPE}}</td> <td>{{item.NB_GPF}}</td>
+                  </tr>
+              </tbody>
               </table>
           </div>
       </div>
@@ -109,16 +100,16 @@
               <!--  <thead></thead> -->
                 <tbody>
                   <tr>
-                    <td>P4 travaux du propriétaire</td> <td>{{ p4 }}</td>
-                  </tr>
-                  <tr>
-                    <td>P3 gros entetien et renouvellement du matériel</td> <td>{{ p3 }}</td>
+                    <td>P1 fourniture énergie primaire</td> <td>{{ p1 }}</td>
                   </tr>
                   <tr>
                     <td>P2 conduite de l'installation et travaux de petit entretien</td> <td>{{ p2 }}</td>
                   </tr>
                   <tr>
-                    <td>P1 fourniture énergie primaire</td> <td>{{ p1 }}</td>
+                    <td>P3 gros entetien et renouvellement du matériel</td> <td>{{ p3 }}</td>
+                  </tr>
+                  <tr>
+                    <td>P4 travaux du propriétaire</td> <td>{{ p4 }}</td>
                   </tr>
                 </tbody>
             </table>
@@ -136,9 +127,10 @@
           <p>Date : {{ FromDate }}</p>
           <div class="panel-body flex-grow">
             <!--<textarea class = "form-control" maxlength = "250">La chaufferie est fonctionnelle !!!</textarea> -->
-            <textarea class= "form-control" ng-model="Commentaires" ng-maxlength="250" ></textarea>
+            <textarea class= "form-control" ng-model="Commentaires" ng-maxlength="250"></textarea>
           </div>
-          <!--  <p>{{Commentaires}}</p> Récupére la valeur de la saisie / Cf pour procédure stockée pour upadte -->
+         <!-- <p>{{Commentaires}}</p> Récupére la valeur de la saisie / Cf pour procédure stockée pour upadte -->
+            <button ng-click="">Enregistrer</button>
       </div>
     </div>
 </div>
@@ -208,21 +200,19 @@
 <div class= "row-flex">
     <div class="col-lg-12">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading">Les objets fonctionnels du Centre Thermique</div> <!-- Tableaux mutlicolonnes ? -->
+        <div class="panel-heading">Les groupes fonctionnels du Centre Thermique</div>
           <div class="panel-body flex-grow">
             <table class="table">
               <thead>
                 <tr>
-                  <th>Dénomination</th>
                   <th>Type</th>
-                  <th>Référence</th>
+                  <th>Description</th>
 		              <th>Lien vers fiche de consistance</th>
-		              <th>Localisation</th>
-	              </tr>
+		            </tr>
               </thead>
                 <tbody>
-                  <tr ng-repeat ="item in ObjFonc " >
-                    <td>{{item.GRF_DESCR}}</td> <td>{{ item.GFT_TYPE}}</td> <td>{{ item.OBF_COD }}</td> <td></td> <td>{{ item.CTH_NUM_CT }}</td>
+                  <tr ng-repeat ="item in GpeFonc " >
+                    <td>{{ item.GPE_TYPE}}</td> <td>{{item.GPE_DESCR}}</td> <td><a href="" ng-click="">Fiche</a></td>
                   <tr>
                 </tbody>
                </table>
@@ -239,15 +229,15 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>Dénomination</th>
                   <th>Type</th>
-                  <th>Référence</th>
+                  <th>Description</th>
 		              <th>Lien vers fiche de consistance</th>
 		            </tr>
               </thead>
                 <tbody>
+                  <!-- <tr ng-repeat =""> -->
                   <tr>
-                    <td>Test</td> <td>Test</td> <td>Test</td> <td>Test</td>
+                    <td>Test</td> <td>Test</td> <td><a href="" ng-click="">Fiche</a></td>
                   </tr>
       	         </tbody>
                </table>

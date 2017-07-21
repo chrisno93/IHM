@@ -1,5 +1,6 @@
 app.controller('AppCtrl', function ( $scope, $http ) {
-  var NumCT = "12527"
+  //var NumCT = "05049"
+  var NumCT = '19076'
   var date = new Date();
 
   function get_CT()
@@ -29,24 +30,7 @@ app.controller('AppCtrl', function ( $scope, $http ) {
                        $scope.rmq = DATA[0].CTH_RMQ_PREV_RENOV
                        $scope.dat = DATA[0].CTH_DAT_DER_RENOV
                        $scope.der = DATA[0].CTH_RMQ_DER_RENOV
-                       $scope.exp = DATA[0].GRE_EXP_COD
-                       $scope.peri = DATA[0].GRE_PERIMETRE_COD
-                       $scope.resptech = DATA[0].GRE_RESP_TECHNIQUE
-                       $scope.respadmin = DATA[0].GRE_RESP_ADM
-                       $scope.cho = DATA[0].GRE_CONTACT_HO
-                       $scope.chno = DATA[0].GRE_CONTACT_HNO
-                       $scope.refinter = DATA[0].GRE_REF_INTERNE
-                       $scope.eqp =DATA[0].EQP_DESIGNATION
-                       $scope.numeqp =DATA[0].EQP_NUM
-                       $scope.eqpadr =DATA[0].EQP_ADRESSE
-                       $scope.eqpcontact =DATA[0].EQP_CONTACT
-                       $scope.eqptel =DATA[0].EQP_CONTACT_TEL
-                       $scope.eqsvcefonc =DATA[0].EQP_SERVICE_FON
-                       $scope.eqpsvceges =DATA[0].EQP_SERVICE_GES
-                       $scope.coll = DATA[0].COL_LBL
-                       $scope.nbcapt =DATA[0].EQP_NB_CAPTEUR
-                      //
-                   })
+                  })
        .error(function(data) {
        console.log('Error: ' + data);
        });
@@ -63,15 +47,25 @@ app.controller('AppCtrl', function ( $scope, $http ) {
         $scope.Eqpt = data ;
         });
 
-        $http.post('/api/ObjFonc' , { CT : NumCT } )
+        $http.post('/api/GpeFonc' , { CT : NumCT } )
         .success(function(data) {
         console.log(data)
-        $scope.ObjFonc = data ;
+        $scope.GpeFonc = data ;
         });
 
-      }
+        $http.post('/api/NbeGroup' , { CT : NumCT } )
+        .success(function(data) {
+        console.log(data)
+        $scope.NbeGroup = data ;
+        });
+    }
     get_CT();
 
       $scope.FromDate = ('0' + date.getDate()).slice(-2)  + '-' +  ('0' + (date.getMonth() + 1)).slice(-2) + '-' +  date.getFullYear();
+    //  $state.go("homeparameters", {'input': $scope.userInput});
 
 });
+
+app.controller('secondCtrl',["$scope", "$stateParams", function($scope, $stateParams){
+    var data = $stateParams.input;
+}]);

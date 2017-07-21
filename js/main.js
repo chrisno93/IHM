@@ -9,9 +9,17 @@ var app = angular.module('myApp', [ 'ui.router']);
 app.config(['$stateProvider','$urlRouterProvider', function ($stateProvider,$urlRouterProvider) {
   $stateProvider
         .state('home', {
-        url: '/home',
-        //url: '/home/:{CT}'
-        templateUrl: 'partials/home.html',
-        controller: 'AppCtrl'
+          url: '/home',
+          templateUrl: 'partials/home.html',
+          controller: 'AppCtrl'
       })
+/*
+//Passage du Ct en paramètre dans l'URL
+app.config(['$stateProvider','$urlRouterProvider', function ($stateProvider,$urlRouterProvider) {
+  $stateProvider
+    .state('home', {
+    url: '/home',
+    templateUrl: 'partials/home.html',
+    controller: 'AppCtrl'
+  })*/
 }]);
