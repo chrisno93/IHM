@@ -180,11 +180,14 @@
 <div class= "row-flex">
     <div class="col-xs-10 .col-lg-12">
       <div class="panel panel-default flex-col">
-      <div class="panel-heading">Commentaires</div>
-                <div class="panel-body flex-grow">
-                  <textarea class= "form-control" ng-model="Commentaires" ng-maxlength="250"></textarea>
-                </div>
-          <button ng-click="">Enregistrer</button>
+        <div class="panel-heading">Commentaires</div>
+        <!--  <p>Date : {{ FromDate }}</p> -->
+          <div class="panel-body flex-grow">
+            <!--<textarea class = "form-control" maxlength = "250">La chaufferie est fonctionnelle !!!</textarea> -->
+            <textarea class= "form-control" ng-model="Commentaires" ng-maxlength="250"></textarea>
+          </div>
+         <!-- <p>{{Commentaires}}</p> Récupére la valeur de la saisie / Cf pour procédure stockée pour upadte -->
+            <button ng-click="">Enregistrer</button>
       </div>
     </div>
 </div>

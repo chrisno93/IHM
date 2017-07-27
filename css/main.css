@@ -5,7 +5,8 @@
   background-color: #FAFAFA;
 	border: none;
 	color: black;
-	padding: 15px 32px;
+	//padding: 15px 32px;
+  padding: 0px 0px !important;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -43,10 +44,11 @@
 
 .col
 {
+  width: auto;
   display: flex;
   flex-wrap: nowrap;
 	flex-direction: column;
-  justify-content: space-between; /* Espace ?? */
+  justify-content: space-between;
   align-items: stretch;
 
 }
@@ -81,6 +83,7 @@ justify-content: center;
 
 html,body {
 	height:100%;
+  margin:0px;
 }
 
 .row-flex, .row-flex > div[class*='col-'] {
@@ -88,22 +91,26 @@ html,body {
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    display: flex;
+    //display: flex;
     flex:1 1 auto;
 }
 
 .row-flex-wrap {
-	-webkit-flex-flow: row wrap;
+	 -webkit-flex-flow: row wrap;
     align-content: flex-start;
     flex:0;
 }
 
 .row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
-	margin:-.2px; // hack adjust for wrapping
+	margin:1.5px; // hack adjust for wrapping
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 .container-flex > div[class*='col-'] div,.row-flex > div[class*='col-'] div {
-	width:100%;
+	margin:1px; // hack adjust for wrapping
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 .flex-col {
@@ -114,9 +121,9 @@ html,body {
 }
 
 .flex-grow {
-	display: flex;
-    -webkit-flex: 2;
-    flex: 2;
+   display: flex;
+   -webkit-flex: 2;
+   flex: 2;
 }
 
 .textarea {
@@ -153,6 +160,8 @@ textarea.form-control {
   flex-shrink : 0 ;
   flex-basis : auto ;
   flex-wrap: nowrap;
+  line-height: 1px;
+  padding:0px !important;
 }
 
 .panel-primary {
@@ -164,6 +173,7 @@ textarea.form-control {
   flex-shrink : 0 ;
   flex-basis : auto ;
   flex-wrap: nowrap;
+  line-height: 0.5px;
 }
 
 p {
@@ -171,19 +181,21 @@ p {
   font-size: 14px;
   font-weight:bold;
   color: #000000;
+  line-height: 0.5px;
 }
 
 .table-tbody {
   font-family: "Roboto" !important;
   background-color: #E9EDF2;
   color: #000000 !important;
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
-  font-size: 14px;
+  font-size: 12px;
   text-align: left;
-//flex-shrink : 0 ;
-//flex-basis : auto ;
-// flex-wrap: nowrap;
+  line-height: 0.5px;
+  flex-shrink : 0 ;
+  flex-basis : auto ;
+  flex-wrap: nowrap;
 }
 
 th {
@@ -193,4 +205,12 @@ th {
   font-weight: bold;
   font-size: 12px;
   text-align: left;
+  line-height: 0.5px;
+}
+
+table {
+  border-collapse: collapse;
+  align-items: center;
+  border: 0;
+//font-weight:bold;
 }

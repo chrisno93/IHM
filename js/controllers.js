@@ -1,9 +1,9 @@
 app.controller('AppCtrl', function ( $scope, $http ) {
-  //var NumCT = "05049"
-  var NumCT = '19076'
+//  var NumCT = "05049"
+  var NumCT = '04045'
   var date = new Date();
 
-  function get_CT()
+    function get_CT()
   {
     $http.post('/api/CT' , { CT : NumCT } )
        .success(function(data) {
@@ -62,10 +62,5 @@ app.controller('AppCtrl', function ( $scope, $http ) {
     get_CT();
 
       $scope.FromDate = ('0' + date.getDate()).slice(-2)  + '-' +  ('0' + (date.getMonth() + 1)).slice(-2) + '-' +  date.getFullYear();
-    //  $state.go("homeparameters", {'input': $scope.userInput});
 
 });
-
-app.controller('secondCtrl',["$scope", "$stateParams", function($scope, $stateParams){
-    var data = $stateParams.input;
-}]);

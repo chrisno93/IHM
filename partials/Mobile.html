@@ -21,7 +21,7 @@
 <div class="container-flex">
 
   <div class= "row-flex">
-    <div class="col-xs-10 .col-lg-12">
+    <div class="col-xs-9">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Description générale</div>
           <div class="panel-body ">
@@ -65,7 +65,7 @@
 </div>
 
   <div class= "row-flex">
-      <div class="col-xs-10 .col-lg-12">
+      <div class="col-xs-9">
         <div class="panel panel-default flex-col">
           <div class="panel-heading">Equipements</div>
             <div class="panel-body flex-grow">
@@ -75,19 +75,19 @@
                    <th>Equipement</th>
                    <th>N° d'équipement</th>
                    <th>Adresse</th>
-                   <th>Chef d'établissement/contact</th>
+                   <th>Contact</th>
                    <th>N° de téléphone</th>
                    <th>Type d'équipement</th>
-                   <th>Service fonctionnel</th>
+                <!--   <th>Service fonctionnel</th>
                    <th>Service gestionnaire</th>
                    <th>Collectivité</th>
-                   <th>Nb capteurs de confort</th>
+                   <th>Nb capteurs de confort</th> -->
                   </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat ="item in Eqpt " >
-                      <td>{{item.EQP_DESIGNATION}}</td> <td><strong>{{ item.EQP_NUM}}</strong></td> <td>{{ item.EQP_ADRESSE }}</td> <td>{{ item.EQP_CONTACT }}</td> <td> {{ item.EQP_CONTACT_TEL }} </td> <td>{{ item.EQT_DESIGNATION }}</td> <td>{{ item.EQP_SERVICE_FON }}</td>
-                      <td>{{ item.EQP_SERVICE_GES }}</td> <td>{{ item.COL_LBL }}</td> <td>{{ item.EQP_NB_CAPTEUR }}</td>
+                      <td>{{item.EQP_DESIGNATION}}</td> <td><strong>{{ item.EQP_NUM}}</strong></td> <td>{{ item.EQP_ADRESSE }}</td> <td>{{ item.EQP_CONTACT }}</td> <td> {{ item.EQP_CONTACT_TEL }} </td> <td>{{ item.EQT_DESIGNATION }}</td> <!--<td>{{ item.EQP_SERVICE_FON }}</td>
+                      <td>{{ item.EQP_SERVICE_GES }}</td> <td>{{ item.COL_LBL }}</td> <td>{{ item.EQP_NB_CAPTEUR }}</td> -->
                     </tr>
                   </tbody>
               </table>
@@ -97,7 +97,7 @@
    </div>
 
    <div class= "row-flex">
-       <div class="col-xs-10 .col-lg-12">
+       <div class="col-xs-9">
      <div class="panel panel-default flex-col">
        <div class="panel-heading">Prestations</div>
          <div class="panel-body flex-grow">
@@ -122,7 +122,7 @@
  </div> <!-- Fin row-flex -->
 
  <div class= "row-flex">
-     <div class="col-xs-10 .col-lg-12">
+     <div class="col-xs-9">
    <div class="panel panel-default flex-col">
      <div class="panel-heading">Maintenance</div>
        <div class="panel-body flex-grow">
@@ -148,7 +148,7 @@
 
 <!-- Exploitants du Centre Thermique -->
 <div class= "row-flex">
-    <div class="col-xs-10 .col-lg-12">
+    <div class="col-xs-9">
       <div class="panel panel-default flex-col">
         <div class="panel-heading">Les exploitants du Centre Thermique</div>
             <div class="panel-body flex-grow">
@@ -162,13 +162,13 @@
                     <th>Responsable administratif</th>
                     <th>Contact HO</th>
                     <th>Contact HNO</th>
-                    <th>Référence Interne</th>
+                    <!--<th>Référence Interne</th>-->
                   </tr>
                 </thead>
                 <tbody>
                   <tr ng-repeat ="item in Exp" >
                     <td>{{item.RXP_LBL}}</td> <td>{{ item.GRE_PERIMETRE_COD }}</td> <td>{{ item.GRE_EXP_COD }}</td> <td>{{ item.GRE_RESP_TECHNIQUE }}</td> <td>{{ item.GRE_RESP_ADM }}</td> <td>{{ item.CONTACT_HO }}</td> <td>{{ item.CONTACT_HNO }}</td>
-                    <td>{{ item.GRE_REF_INTERNE }}</td>
+                    <!--<td>{{ item.GRE_REF_INTERNE }}</td>-->
                   </tr>
                 </tbody>
               </table>
@@ -178,13 +178,13 @@
 </div>
 
 <div class= "row-flex">
-    <div class="col-xs-10 .col-lg-12">
+    <div class="col-xs-9">
       <div class="panel panel-default flex-col">
-      <div class="panel-heading">Commentaires</div>
-                <div class="panel-body flex-grow">
-                  <textarea class= "form-control" ng-model="Commentaires" ng-maxlength="250"></textarea>
-                </div>
-          <button ng-click="">Enregistrer</button>
+        <div class="panel-heading">Commentaires</div>
+          <div class="panel-body flex-grow">
+            <textarea class= "form-control" ng-model="Commentaires" ng-maxlength="250"></textarea>
+          </div>
+            <button ng-click="">Enregistrer</button>
       </div>
     </div>
 </div>

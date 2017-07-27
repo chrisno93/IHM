@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Meta-Information -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <title>IHM</title>
+    <meta name="description" content="Eiffage">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" style="text/css" href="main.css" />
+
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+<script src="node_modules/angular1/es6/dev/src/testing/shims_for_IE.js"></script>
+<script src="node_modules/core-js/client/shim.min.js"></script>
+
+<!-- Container Flex -->
+<div class="container">
+
+  <div class= "row-flex">
+    <div class="col-lg-5">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading">Description générale</div>
+          <div class="panel-body ">
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Numéro CT</td> <td>{{ ct }}</td>
+                  </tr>
+                  <tr>
+                    <td>Désignation CT</td> <td>{{ desc }}</td>
+                  </tr>
+                  <tr>
+                    <td>Numéro du poste technique</td> <td>{{ pt }}</td>
+                  </tr>
+                  <tr>
+                    <td>Adresse</td> <td>{{ adr }} {{ cp }} {{ ville }}</td>
+                  </tr>
+                  <tr>
+                    <td>Puissance totale installée (kW)</td> <td>{{ puiss }}</td>
+                  </tr>
+                  <tr>
+                    <td>Contrat d'objectif</td> <td>{{ ctr }}</td>
+                  </tr>
+                  <tr>
+                    <td>Type Energie principale</td> <td>{{ nrg }}</td>
+                  </tr>
+                  <tr>
+                    <td>Etat admninistatif</td> <td>{{ stat }}</td>
+                  </tr>
+                  <tr>
+                    <td>Type CT</td> <td>{{ typ }}</td>
+                  </tr>
+                  <tr>
+                    <td>Centre thermique supervisé</td> <td>{{ super }}</td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+      </div>
+
+    <div class="col-lg-7">
+      <div class= "row-flex">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading">Equipements</div>
+          <div class="panel-body flex-grow">
+            <table class="table">
+              <thead>
+               <tr>
+                 <th>Equipement</th>
+                 <th>Numéro d'équipement</th>
+                 <th>Type d'équipement</th>
+                 <th>Adresse</th>
+                 <th>Chef d'établissement/contact</th>
+                 <th>Numéro de téléphone</th>
+                 <th>Type d'équipement</th>
+                 <th>Service fonctionnel</th>
+                 <th>Service gestionnaire</th>
+                 <th>Collectivité</th>
+                 <th>Nombre de capteurs de confort</th>
+              </thead>
+              <tbody>
+                  <tr ng-repeat ="item in Eqpt " >
+                  <td>{{item.EQP_DESIGNATION}}</td> <td>{{ item.EQP_NUM}}</td> <td>{{ item.EQT_DESIGNATION }}</td> <td>{{ item.EQP_ADRESSE }}</td>
+                  <td>{{ item.EQP_CONTACT }}</td> <td> {{ item.EQP_CONTACT_TEL }} </td> <td>{{ item.EQT_DESIGNATION }}</td> <td>{{ item.EQP_SERVICE_FON }}</td>
+                  <td>{{ item.EQP_SERVICE_GES }}</td> <td>{{ item.COL_LBL }}</td> <td>{{ item.EQP_NB_CAPTEUR }}</td>
+                  </tr>
+            </table>
+          </div>
+      </div>
+     </div>
+</div> <!-- Fin lg-7 -->
+</div> <!-- Fin lg-5 -->
+</div> <!-- Fin 1ère ligne -->
+
+<!-- Début 2ème ligne -->
+<div class= "row-flex">
+  <div class="col-lg-6">
+  <div class="panel panel-default flex-col">
+    <div class="panel-heading">Prestations</div>
+      <div class="panel-body flex-grow">
+        <table class="table">
+          <thead>
+            <tr>
+            <th>P1</th>
+            <th>P2</th>
+            <th>P3</th>
+            <th>P4</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr>
+               <td>{{p1}}</td><td>{{p2}}</td><td>{{p3}}</td><td>{{p4}}</td>
+             </tr>
+           </tbody>
+          </table>
+      </div>
+  </div>
+
+
+<div class="col-lg-6">
+<div class= "row-flex">
+  <div class="panel panel-default flex-col">
+    <div class="panel-heading">Maintenance</div>
+      <div class="panel-body flex-grow">
+        <table class="table">
+         <thead>
+             <tr>
+             <th>Date prévisionnelle de révision</th>
+             <th>Remarque technique sur la prochaine rénovation</th>
+             <th>Date de la dernière rénovation/ Date d'ouverture</th>
+             <th>Description de la dernière rénovation</th>
+             </tr>
+           </thead>
+           <tbody>
+              <tr>
+                <td>{{prev}}</td><td>{{rmq}}</td><td>{{dat}}</td><td>{{der}}</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+
+</div> <!-- Fin lg-6-->
+</div> <!-- Fin lg-6 -->
+</div> <!-- Fin 2èmeligne-->
+
+<div class= "row-flex">
+    <div class="col-lg-12">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading">Les exploitants du Centre Thermique</div>
+            <div class="panel-body flex-grow">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Rôle</th>
+                    <th>Périmètre Exploitation</th>
+                    <th>Groupe Exploitation</th>
+                    <th>Responsable technique</th>
+                    <th>Responsable administratif</th>
+                    <th>Contact HO</th>
+                    <th>Contact HNO</th>
+                    <th>Référence Interne</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat ="item in Exp" >
+                    <td>{{item.RXP_LBL}}</td> <td>{{ item.GRE_PERIMETRE_COD }}</td> <td>{{ item.GRE_EXP_COD }}</td> <td>{{ item.GRE_RESP_TECHNIQUE }}</td> <td>{{ item.GRE_RESP_ADM }}</td> <td>{{ item.CONTACT_HO }}</td> <td>{{ item.CONTACT_HNO }}</td>
+                    <td>{{ item.GRE_REF_INTERNE }}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div class= "row-flex">
+    <div class="col-lg-12">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading">Commentaires</div>
+        <!--<p>Date : {{ FromDate }}</p>-->
+          <div class="panel-body flex-grow">
+            <!--<textarea class = "form-control" maxlength = "250">La chaufferie est fonctionnelle !!!</textarea> -->
+            <textarea class= "form-control" ng-model="Commentaires" ng-maxlength="250"></textarea>
+          </div>
+         <!-- <p>{{Commentaires}}</p> Récupére la valeur de la saisie / Cf pour procédure stockée pour upadte -->
+            <button ng-click="">Enregistrer</button>
+      </div>
+    </div>
+</div>
+
+</div> <!-- Fin container -->
+
+</body>
+</html>

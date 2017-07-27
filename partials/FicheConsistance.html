@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Meta-Information -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <title>IHM</title>
+    <meta name="description" content="Eiffage">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" style="text/css" href="main.css" />
+
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+<script src="node_modules/angular1/es6/dev/src/testing/shims_for_IE.js"></script>
+<script src="node_modules/core-js/client/shim.min.js"></script>
+
+<!-- Container Flex -->
+<div class="container-flex">
+
+  <div class= "row-flex">
+    <div class="col-lg-12">
+      <div class= "row-flex">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading">Nombre de Groupes Fonctionnels</div>
+          <div class="panel-body flex-grow">
+            <table class="table"> <!-- Faire comptage dans la table -->
+              <!--  <thead></thead> -->
+              <tbody>
+                <tr ng-repeat ="item in NbeGroup" >
+                  <td>{{item.LIBELLE_GPE}}</td> <td>{{item.NB_GPF}}</td>
+                  </tr>
+              </tbody>
+              </table>
+          </div>
+      </div>
+     </div>
+  </div>
+</div>
+
+<div class= "row-flex">
+    <div class="col-lg-12">
+      <div class="panel panel-default flex-col">
+        <div class="panel-heading">Les groupes fonctionnels du Centre Thermique</div>
+          <div class="panel-body flex-grow">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Description</th>
+		              <th>Lien vers fiche de consistance</th>
+		            </tr>
+              </thead>
+                <tbody>
+                  <tr ng-repeat ="item in GpeFonc " >
+                    <td>{{ item.GPE_TYPE}}</td> <td>{{item.GPE_DESCR}}</td> <td><a href="" ng-click="">Fiche</a></td>
+                  <tr>
+                </tbody>
+               </table>
+          </div>
+      </div>
+    </div>
+</div>
+
+</div> <!-- Fin container -->
+
+</body>
+</html>
