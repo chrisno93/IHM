@@ -19,7 +19,6 @@
   -webkit-box-shadow: 0px 1px 0px rgba(155, 155, 155, 0.75);
   -moz-box-shadow:    0px 1px 0px rgba(155, 155, 155, 0.75);
    padding : 0 5px 0 5px  ;
-
 }
 
 .btn:hover {
@@ -59,7 +58,7 @@
 	display: flex;
   flex-wrap: nowrap;
 	flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: stretch;
 }
 
@@ -91,24 +90,28 @@ html,body {
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    //display: flex;
+    display: flex;
     flex:1 1 auto;
+    margin-bottom: 0px !important;
 }
 
 .row-flex-wrap {
 	 -webkit-flex-flow: row wrap;
     align-content: flex-start;
     flex:0;
+    margin-bottom: 0px !important;
 }
 
 .row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
-	margin:1.5px; // hack adjust for wrapping
+	margin: 1.5px; // hack adjust for wrapping
+  //margin-bottom: 0px !important; 
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
 
 .container-flex > div[class*='col-'] div,.row-flex > div[class*='col-'] div {
-	margin:1px; // hack adjust for wrapping
+	margin:0px;
+  //margin-bottom: 0px !important;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
@@ -118,12 +121,14 @@ html,body {
     display: -webkit-flex;
     flex: 1 100%;
 	  flex-flow: column nowrap;
+    margin-bottom: 0px !important;
 }
 
 .flex-grow {
    display: flex;
    -webkit-flex: 2;
    flex: 2;
+   margin-bottom: 0px !important;
 }
 
 .textarea {
@@ -196,6 +201,7 @@ p {
   flex-shrink : 0 ;
   flex-basis : auto ;
   flex-wrap: nowrap;
+  margin-bottom: 0px; // ???
 }
 
 th {

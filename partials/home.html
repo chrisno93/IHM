@@ -20,43 +20,36 @@
 <!-- Container Flex -->
 <div class="container-flex">
 
+<!-- Description générale -->
   <div class= "row-flex">
     <div class="col-xs-10 .col-lg-12">
       <div class="panel panel-default flex-col">
-        <div class="panel-heading">Description générale</div>
+        <div class="panel-heading">CT{{ ct }} {{ adr }} {{ cp }} {{ ville }}</div>
           <div class="panel-body ">
             <table class="table">
-                <tbody>
-                  <tr>
-                    <td>Numéro CT</td> <td><strong>{{ ct }}</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Désignation CT</td> <td>{{ desc }}</td>
-                  </tr>
-                  <tr>
-                    <td>Numéro du poste technique</td> <td><strong>{{ pt }}</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Adresse</td> <td>{{ adr }} {{ cp }} {{ ville }}</td>
-                  </tr>
-                  <tr>
-                    <td>Puissance totale installée (kW)</td> <td><strong>{{ puiss }}<strong></td>
-                  </tr>
-                  <tr>
-                    <td>Contrat d'objectif</td> <td>{{ ctr }}</td>
-                  </tr>
-                  <tr>
-                    <td>Type Energie principale</td> <td>{{ nrg }}</td>
-                  </tr>
-                  <tr>
-                    <td>Etat admninistatif</td> <td>{{ stat }}</td>
-                  </tr>
-                  <tr>
-                    <td>Type CT</td> <td>{{ typ }}</td>
-                  </tr>
-                  <tr>
-                    <td>Centre thermique supervisé</td> <td>{{ super }}</td>
-                  </tr>
+              <thead>
+                 <tr>
+                   <th>Designation CT</th>
+                   <th>Numéro du poste technique</th>
+                   <th>Puissance totale intallée(kW)</th>
+                   <th>Contrat d'objectif</th>
+                   <th>Type Energie Principale</th>
+                   <th>Etat administratif</th>
+                   <th>Type CT</th>
+                   <th>Centre thermique supervisé</th>
+                   <th>Centre thermique signalé</th>
+                 </tr>
+               </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ desc }}</td><td><strong>{{ pt }}</strong></td><td><strong>{{ puiss }}<strong></td>
+                        <td>{{ ctr }}</td><td>{{ nrg }}</td><td>{{ stat }}</td><td>{{ typ }}</td><td>{{ super }}</td>
+                        <td> {{ signale }}</td>
+                    </tr>
+              <!--  <tr ng-repeat ="item in CT " >
+                    <td>{{item.CTH_DESC_CT}}</td> <td><strong>{{ item.CTH_NUM_PT}}</strong></td> <td>{{ item.CTH_PUISSANCE_CT }}</td> <td>{{ item.CTH_CTR_ID }}</td> <td>{{ item.NRG_LBL }}</td>
+                    <td>{{ item.STA_LBL }}</td> <td>{{ item.CTT_LBL }}</td> <td>{{ item.CTH_SUPERVISE }}</td> <td>{{ item.CTH_SIGNALE }}</td>
+                  </tr> -->
                 </tbody>
             </table>
           </div>
@@ -64,6 +57,7 @@
     </div>
 </div>
 
+  <!-- Equipements -->
   <div class= "row-flex">
       <div class="col-xs-10 .col-lg-12">
         <div class="panel panel-default flex-col">
@@ -96,10 +90,42 @@
      </div>
    </div>
 
+   <!-- Exploitants du Centre Thermique -->
+   <div class= "row-flex">
+       <div class="col-xs-10 .col-lg-12">
+         <div class="panel panel-default flex-col">
+           <div class="panel-heading">Les exploitants du Centre Thermique</div>
+               <div class="panel-body flex-grow">
+                 <table class="table">
+                   <thead>
+                     <tr>
+                       <th>Rôle</th>
+                       <th>Périmètre Exploitation</th>
+                       <th>Groupe Exploitation</th>
+                       <th>Responsable technique</th>
+                       <th>Responsable administratif</th>
+                       <th>Contact HO</th>
+                       <th>Contact HNO</th>
+                       <th>Référence Interne</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr ng-repeat ="item in Exp" >
+                       <td>{{item.RXP_LBL}}</td> <td>{{ item.GRE_PERIMETRE_COD }}</td> <td>{{ item.GRE_EXP_COD }}</td> <td>{{ item.GRE_RESP_TECHNIQUE }}</td> <td>{{ item.GRE_RESP_ADM }}</td> <td>{{ item.CONTACT_HO }}</td> <td>{{ item.CONTACT_HNO }}</td>
+                       <td>{{ item.GRE_REF_INTERNE }}</td>
+                     </tr>
+                   </tbody>
+                 </table>
+             </div>
+         </div>
+       </div>
+   </div>
+
+<!-- Prestations / Maintenance -->
    <div class= "row-flex">
        <div class="col-xs-10 .col-lg-12">
      <div class="panel panel-default flex-col">
-       <div class="panel-heading">Prestations</div>
+       <div class="panel-heading">Prestations/Maintenance</div>
          <div class="panel-body flex-grow">
            <table class="table">
             <thead>
@@ -115,12 +141,26 @@
                   <td>{{p1}}</td><td>{{p2}}</td><td>{{p3}}</td><td>{{p4}}</td>
                 </tr>
               </tbody>
+              <thead>
+                  <tr>
+                  <th>Date prévisionnelle de révision</th>
+                  <th>Remarque technique sur la prochaine rénovation</th>
+                  <th>Date de la dernière rénovation/ Date d'ouverture</th>
+                  <th>Description de la dernière rénovation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                     <td>{{prev}}</td><td>{{rmq}}</td><td>{{dat}}</td><td>{{der}}</td>
+                   </tr>
+                </tbody>
           </table>
          </div>
      </div>
    </div>
  </div> <!-- Fin row-flex -->
 
+<!--
  <div class= "row-flex">
      <div class="col-xs-10 .col-lg-12">
    <div class="panel panel-default flex-col">
@@ -144,38 +184,7 @@
        </div>
    </div>
  </div>
- </div> <!-- Fin row-flex -->
-
-<!-- Exploitants du Centre Thermique -->
-<div class= "row-flex">
-    <div class="col-xs-10 .col-lg-12">
-      <div class="panel panel-default flex-col">
-        <div class="panel-heading">Les exploitants du Centre Thermique</div>
-            <div class="panel-body flex-grow">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Rôle</th>
-                    <th>Périmètre Exploitation</th>
-                    <th>Groupe Exploitation</th>
-                    <th>Responsable technique</th>
-                    <th>Responsable administratif</th>
-                    <th>Contact HO</th>
-                    <th>Contact HNO</th>
-                    <th>Référence Interne</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr ng-repeat ="item in Exp" >
-                    <td>{{item.RXP_LBL}}</td> <td>{{ item.GRE_PERIMETRE_COD }}</td> <td>{{ item.GRE_EXP_COD }}</td> <td>{{ item.GRE_RESP_TECHNIQUE }}</td> <td>{{ item.GRE_RESP_ADM }}</td> <td>{{ item.CONTACT_HO }}</td> <td>{{ item.CONTACT_HNO }}</td>
-                    <td>{{ item.GRE_REF_INTERNE }}</td>
-                  </tr>
-                </tbody>
-              </table>
-          </div>
-      </div>
-    </div>
-</div>
+ </div> -- Fin row-flex -->
 
 <div class= "row-flex">
     <div class="col-xs-10 .col-lg-12">

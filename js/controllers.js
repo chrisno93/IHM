@@ -1,5 +1,5 @@
 app.controller('AppCtrl', function ( $scope, $http ) {
-//  var NumCT = "05049"
+// var NumCT = "05049"
   var NumCT = '04045'
   var date = new Date();
 
@@ -30,6 +30,7 @@ app.controller('AppCtrl', function ( $scope, $http ) {
                        $scope.rmq = DATA[0].CTH_RMQ_PREV_RENOV
                        $scope.dat = DATA[0].CTH_DAT_DER_RENOV
                        $scope.der = DATA[0].CTH_RMQ_DER_RENOV
+                       $scope.signale = DATA[0].CTH_SIGNALE
                   })
        .error(function(data) {
        console.log('Error: ' + data);
