@@ -41,14 +41,17 @@
                    <th>Centre thermique signalé</th> <!-- Modifiable N1-->
                  </tr>
                </thead>
-                  <tbody>
-                    <tr>
-                      <td>{{ desc }}</td><td><strong>{{ pt }}</strong></td><td><strong>{{ puiss }}<strong></td>
-                        <td>{{ ctr }}</td><td>{{ nrg }}</td><td>{{ stat }}</td><td>{{ typ }}</td><td>{{ super }}</td>
-                        <td> {{ signale }}</td>
-                    </tr>
-                <!--   <div ng-messages =""> </div> -->
-                 </tbody>
+                <tbody>
+                  <tr>
+                    <td>{{ desc }}</td><td><strong>{{ pt }}</strong></td><td><strong>{{ puiss }}<strong>  <label for="Puissance"></label>
+                      <input list="puiss" type="text" id="Puissance">
+                      <datalist id="puiss">
+                        <option value={{item.CTH_PUISSANCE_CT}}>
+                      </datalist></td>
+                    <td>{{ ctr }}</td><td>{{ nrg }}</td><td>{{ stat }}</td><td>{{ typ }}</td><td>{{ super }}</td>
+                    <td> {{ signale }}</td>
+                  </tr>
+                </tbody>
             </table>
           </div>
       </div>
@@ -121,7 +124,7 @@
 
 <!-- Prestations / Maintenance -->
    <div class= "row-flex">
-       <div class="col-xs-10 .col-lg-12">
+    <div class="col-xs-10 .col-lg-12">
      <div class="panel panel-default flex-col">
        <div class="panel-heading">Prestations/Maintenance</div>
          <div class="panel-body flex-grow">
@@ -158,7 +161,8 @@
    </div>
  </div> <!-- Fin row-flex -->
 
-<div class= "row-flex">
+<!-- Commentaires -->
+ <div class= "row-flex">
     <div class="col-xs-10 .col-lg-12">
       <div class="panel panel-default flex-col">
       <div class="panel-heading">Commentaires</div> <!-- Modifiable N2-->
@@ -168,7 +172,7 @@
           <button ng-click="">Enregistrer</button>
       </div>
     </div>
-</div>
+ </div>
 
 </div> <!-- Fin container -->
 

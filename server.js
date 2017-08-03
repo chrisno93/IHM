@@ -5,24 +5,18 @@ var app = express();
 var opn = require('opn');
 var bodyParser = require("body-parser");
 var morgan = require('morgan');
-//Déclaration de l'application routeApp
-//var routeApp = angular.module('routeApp', [
-    // Dépendances du "module"
-//    'ngRoute'
-//]);
-
 
 // Binding express app to port 3000
 app.listen(4000,function(){
     console.log('Node server running @ http://localhost:4000')
 });
+
 // app.use(parser.urlencoded({extended : true}));
 app.use(morgan('dev')); //Log server
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-opn('http://localhost:4000', {app: 'chrome'});
-
+// opn('http://localhost:4000', {app: 'chrome'});
 var config = {
     user: 'sa',
     password: 'VdP2016!',
@@ -128,26 +122,3 @@ app.use(function(req, res, next){
   // default to plain-text. send()
    res.type('txt').send('Not found');
  });
-
-//     var request =  new sql.Request()
-//    .input('input_parameter', sql.Int, value)
-//    .query('select TOP 5 * from SUPERVISION where id = @input_parameter').then(function(recordset) {
-//
-//       .query('select TOP '+ SELECT + ' * from dbo.SUPERVISION  ').then(function(recordset) {
-//
-//       //  ids=JSON.stringify(recordset, [ 'Metier', 'Installation_technique','NomGroupeFonctionnel','DesignGroupeFonctionnel','NomObjetFonctionnel','DesignObjetFonctionnel','Information','Libelle_information']);
-//       ids = JSON.parse(JSON.stringify(recordset).replace(/"\s+|\s+"/g,'"'))
-//       console.log(Object.keys(ids).length);
-//
-//       //  TOTAL = Object.keys(ids).length;
-//       // console.log(ids);
-//       callback();
-//       }).catch(function(err) {
-//
-//         console.log(err.name + ' --> ' + err.code + ' : ' + err.message);
-//     });
-//
-//     }).catch(function(err) {
-//         console.log(err.name + ' --> ' + err.code + ' : ' + err.message);
-//
-//     });

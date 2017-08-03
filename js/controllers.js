@@ -1,6 +1,9 @@
-app.controller('AppCtrl', function ( $scope, $http ) {
-// var NumCT = "05049"
-  var NumCT = '04045'
+app.controller('AppCtrl', function ( $scope, $http, $stateParams) {
+  if($stateParams)
+  console.log($stateParams)
+
+  var NumCT = $stateParams.CT
+  //var NumCT = '04045'
   var date = new Date();
 
     function get_CT()
